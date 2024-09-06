@@ -1,0 +1,14 @@
+.select-underline {
+    position: relative; /* 使偽元素相對於父元素定位 */
+}
+
+.select-underline::after {
+    content: ''; 
+    display: block;
+    width: 30%; 
+    border-bottom: 3px solid #0068FF;
+    position: absolute;
+    left: 50%; 
+    transform: translateX(-50%); 
+    bottom: 0; 
+}
