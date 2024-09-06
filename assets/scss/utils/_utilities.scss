@@ -1,8 +1,8 @@
-$utilities: map-merge(
-  $utilities, (
-    "font-size": map-merge(
-      map-get($utilities, "font-size"),
-      ( responsive: true ),
-    ),
-  )
-);
+$utilities: map-merge($utilities, ("font-size": map-merge(map-get($utilities, "font-size"),
+        (responsive: true),
+      ),
+    ));
+$utilities: map-merge($utilities, ("border": map-merge(map-get($utilities, "border"),
+        (responsive: true),
+      ),
+    ));
