@@ -1,9 +1,66 @@
 .nav-logo{
     width: 200px;
+    @include media-breakpoint-down(sm){
+        width: 125px;
+    }
 }
 .main-navbar{
     box-shadow: 0 2px 40px rgba($primary, 0.1 );
+    @include media-breakpoint-down(sm){
+        box-shadow: none;
+    }
 }
 .nav-dropdown{
     width: 105px;
+    &::after{
+        display: none;
+    }
+}
+.nav-dropdown-menu{
+    max-width: 863px;
+    > ul{
+        max-height: 600px;
+        > li{
+            &::-webkit-scrollbar {
+                width: 4px;
+                background-color: $white;
+            }
+            &::-webkit-scrollbar-thumb {
+                background-color: #E1E1E1;
+                border-radius: 2px;
+            }
+        }
+    }
+    .level-3{
+        width: 400px;
+    }
+}
+.dropdown-item{
+    border-radius: 12px;
+}
+.dropdown-item:hover,
+.dropdown-item.active{
+    background-color: $primary;
+    color: $white;
+}
+.nav-search-form{
+    .nav-search-input{
+        width: 425px;
+    }
+}
+.nav-fire{
+    width: 24px;
+}
+.nav-hot-card-img{
+    img{
+        width: 100px;
+        height: 100px;
+        border-radius: 12px;
+    }
+}
+.navbar-toggler:focus{
+    box-shadow: none;
+}
+.navbar-toggler-icon{
+    background-image: none;
 }
