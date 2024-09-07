@@ -1,40 +1,307 @@
 <div class="container">
-  <nav class="navbar navbar-expand-lg rounded-pill mt-10 mb-4 main-navbar px-10 py-4">
-    <div class="container">
+  <nav class="navbar navbar-expand-xl rounded-pill mt-sm-10 mb-sm-4 main-navbar px-sm-10 py-sm-4 py-3 position-relative text-neutral-80">
+    <div class="container p-0">
       <a class="navbar-brand me-6" href="index.html">
         <img src="/assets/images/logo.png" alt="Learning" class="nav-logo">
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <div class="dropdown d-none d-xl-block position-static">
+        <a class="nav-link dropdown-toggle nav-dropdown text-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          探索
+          <span class="material-symbols-outlined fs-6 align-middle">keyboard_arrow_down</span>
+        </a>
+
+        <!-- 桌面版dropdown -->
+        <div class="dropdown-menu nav-dropdown-menu p-0 overflow-hidden w-100 start-50 translate-middle-x top-100 mt-2 text-neutral-80">
+          <ul class="d-flex list-unstyled">
+            <li class="bg-neutral-10 p-3 flex-grow-1 overflow-y-scroll">
+              <p class="p-3 ps-6">探索全部</p>
+              <ul class="d-flex flex-column list-unstyled">
+                <li>
+                  <a href="#" class="dropdown-item d-flex align-items-center justify-content-between p-3 ps-6">音樂
+                    <span class="material-symbols-outlined fs-6 align-middle">keyboard_arrow_right</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="dropdown-item d-flex align-items-center justify-content-between p-3 ps-6">攝影
+                    <span class="material-symbols-outlined fs-6 align-middle">keyboard_arrow_right</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="dropdown-item d-flex align-items-center justify-content-between p-3 ps-6 active">程式
+                    <span class="material-symbols-outlined fs-6 align-middle">keyboard_arrow_right</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="dropdown-item d-flex align-items-center justify-content-between p-3 ps-6">程式
+                    <span class="material-symbols-outlined fs-6 align-middle">keyboard_arrow_right</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="dropdown-item d-flex align-items-center justify-content-between p-3 ps-6">藝術
+                    <span class="material-symbols-outlined fs-6 align-middle">keyboard_arrow_right</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="dropdown-item d-flex align-items-center justify-content-between p-3 ps-6">人文
+                    <span class="material-symbols-outlined fs-6 align-middle">keyboard_arrow_right</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="dropdown-item d-flex align-items-center justify-content-between p-3 ps-6">行銷
+                    <span class="material-symbols-outlined fs-6 align-middle">keyboard_arrow_right</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="dropdown-item d-flex align-items-center justify-content-between p-3 ps-6">投資理財
+                    <span class="material-symbols-outlined fs-6 align-middle">keyboard_arrow_right</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="dropdown-item d-flex align-items-center justify-content-between p-3 ps-6">心靈成長
+                    <span class="material-symbols-outlined fs-6 align-middle">keyboard_arrow_right</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="dropdown-item d-flex align-items-center justify-content-between p-3 ps-6">職場技能
+                    <span class="material-symbols-outlined fs-6 align-middle">keyboard_arrow_right</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="dropdown-item d-flex align-items-center justify-content-between p-3 ps-6">生活品味
+                    <span class="material-symbols-outlined fs-6 align-middle">keyboard_arrow_right</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="p-3 flex-grow-1 overflow-y-scroll">
+              <p class="p-3 ps-6">所有程式</p>
+              <ul class="d-flex flex-column list-unstyled">
+                <li>
+                  <a href="#" class="dropdown-item d-flex align-items-center justify-content-between p-3 ps-6">程式入門
+                    <span class="material-symbols-outlined fs-6 align-middle">keyboard_arrow_right</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="dropdown-item d-flex align-items-center justify-content-between p-3 ps-6 active">網頁前端
+                    <span class="material-symbols-outlined fs-6 align-middle">keyboard_arrow_right</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="dropdown-item d-flex align-items-center justify-content-between p-3 ps-6">網頁後端
+                    <span class="material-symbols-outlined fs-6 align-middle">keyboard_arrow_right</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="dropdown-item d-flex align-items-center justify-content-between p-3 ps-6">網站架設
+                    <span class="material-symbols-outlined fs-6 align-middle">keyboard_arrow_right</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="dropdown-item d-flex align-items-center justify-content-between p-3 ps-6">資訊安全
+                    <span class="material-symbols-outlined fs-6 align-middle">keyboard_arrow_right</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="dropdown-item d-flex align-items-center justify-content-between p-3 ps-6">程式語言
+                    <span class="material-symbols-outlined fs-6 align-middle">keyboard_arrow_right</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="dropdown-item d-flex align-items-center justify-content-between p-3 ps-6">遊戲開發
+                    <span class="material-symbols-outlined fs-6 align-middle">keyboard_arrow_right</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="dropdown-item d-flex align-items-center justify-content-between p-3 ps-6">資料科學
+                    <span class="material-symbols-outlined fs-6 align-middle">keyboard_arrow_right</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="dropdown-item d-flex align-items-center justify-content-between p-3 ps-6">人工智慧
+                    <span class="material-symbols-outlined fs-6 align-middle">keyboard_arrow_right</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="dropdown-item d-flex align-items-center justify-content-between p-3 ps-6">量化分析
+                    <span class="material-symbols-outlined fs-6 align-middle">keyboard_arrow_right</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="py-3 px-6 level-3 overflow-y-scroll">
+              <p class="fw-bold mt-1 pb-4 border-bottom mb-4"><img src="/assets/images/icons/ic_fire.png" alt="fire" class="nav-fire me-2">熱門網頁前端課程</p>
+              <ul class="d-flex flex-column list-unstyled gap-4">
+                <li>
+                  <a href="#" class="d-flex nav-hot-card gap-2 border-bottom pb-6">
+                    <div class="nav-hot-card-img flex-shrink-0 position-relative">
+                      <p class="badge bg-danger-10 text-danger position-absolute start-0 top-0 mt-1 ms-1 rounded-pill">8折</p>
+                      <img src="/assets/images/course-5.png" alt="course" class="object-fit-cover">
+                    </div>
+                    <div class="d-flex flex-column gap-4">
+                      <p class="fw-bold text-black">小白也會！從零開始學習 Python 程式設計</p>
+                      <div class="d-flex align-items-center justify-content-between border-bottom pb-2">
+                        <div class="nav-hot-card-teacher d-flex align-items-center gap-2">
+                          <img src="/assets/images/avatar-2.png" alt="Kelly Hsu">
+                          <p>Kelly Hsu</p>
+                        </div>
+                        <div>
+                          <p class="text-primary fw-bold text-end">NT$ 2,480</p>
+                          <p class="text-neutral-70 text-decoration-line-through fs-9 text-end">NT$ 3,200</p>
+                        </div>
+                      </div>
+                      <div class="d-flex align-items-center justify-content-between fs-8">
+                        <p>已有 420 位同學加入</p>
+                        <p><img src="/assets/images/icons/star.png" alt="star" class="me-1"><span class="me-1 fw-medium">4.0</span><span class="text-neutral-70">(333)</span></p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="d-flex nav-hot-card gap-2 border-bottom pb-6">
+                    <div class="nav-hot-card-img flex-shrink-0 position-relative">
+                      <p class="badge bg-danger-10 text-danger position-absolute start-0 top-0 mt-1 ms-1 rounded-pill">8折</p>
+                      <img src="/assets/images/course-5.png" alt="course" class="object-fit-cover">
+                    </div>
+                    <div class="d-flex flex-column gap-4">
+                      <p class="fw-bold text-black">小白也會！從零開始學習 Python 程式設計</p>
+                      <div class="d-flex align-items-center justify-content-between border-bottom pb-2">
+                        <div class="nav-hot-card-teacher d-flex align-items-center gap-2">
+                          <img src="/assets/images/avatar-2.png" alt="Kelly Hsu">
+                          <p>Kelly Hsu</p>
+                        </div>
+                        <div>
+                          <p class="text-neutral-60 fw-bold text-end">已購買</p>
+                          <p class="text-neutral-70 text-decoration-line-through fs-9 text-end">NT$ 3,200</p>
+                        </div>
+                      </div>
+                      <div class="d-flex align-items-center justify-content-between fs-8">
+                        <p>已有 420 位同學加入</p>
+                        <p><img src="/assets/images/icons/star.png" alt="star" class="me-1"><span class="me-1 fw-medium">4.0</span><span class="text-neutral-70">(333)</span></p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="d-flex nav-hot-card gap-2 border-bottom pb-6">
+                    <div class="nav-hot-card-img flex-shrink-0 position-relative">
+                      <p class="badge bg-danger-10 text-danger position-absolute start-0 top-0 mt-1 ms-1 rounded-pill">8折</p>
+                      <img src="/assets/images/course-5.png" alt="course" class="object-fit-cover">
+                    </div>
+                    <div class="d-flex flex-column gap-4">
+                      <p class="fw-bold text-black">小白也會！從零開始學習 Python 程式設計</p>
+                      <div class="d-flex align-items-center justify-content-between border-bottom pb-2">
+                        <div class="nav-hot-card-teacher d-flex align-items-center gap-2">
+                          <img src="/assets/images/avatar-2.png" alt="Kelly Hsu">
+                          <p>Kelly Hsu</p>
+                        </div>
+                        <div>
+                          <p class="text-primary fw-bold text-end">NT$ 2,480</p>
+                          <p class="text-neutral-70 text-decoration-line-through fs-9 text-end">NT$ 3,200</p>
+                        </div>
+                      </div>
+                      <div class="d-flex align-items-center justify-content-between fs-8">
+                        <p>已有 420 位同學加入</p>
+                        <p><img src="/assets/images/icons/star.png" alt="star" class="me-1"><span class="me-1 fw-medium">4.0</span><span class="text-neutral-70">(333)</span></p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <form class="nav-search-form d-none d-xl-block position-relative" role="search">
+        <span class="material-symbols-outlined position-absolute nav-search-icon top-50 start-0 translate-middle-y ms-2">search</span>
+        <input class="form-control nav-search-input py-5 ps-10 pe-20" type="search" placeholder="搜尋各種音樂、數學、程式及設計課程" aria-label="Search">
+        <button class="btn btn-primary position-absolute px-4 py-3 nav-search-btn top-50 end-0 translate-middle-y me-2" type="submit">搜尋</button>
+      </form>
+
+      <div class="d-flex gap-xl-4 ms-auto me-xl-4">
+        <a href="#" class="px-3 py-2">
+          <span class="material-symbols-outlined">notifications</span>
+        </a>
+        <a href="#" class="px-3 py-2">
+          <span class="material-symbols-outlined">shopping_cart</span>
+        </a>
+      </div>
+
+      <button class="navbar-toggler border-0 px-3 py-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon material-symbols-outlined">
+          menu
+        </span>
       </button>
 
-      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas offcanvas-end flex-grow-0 flex-shrink-0" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
 
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">探索全部</h5>
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
 
         <div class="offcanvas-body">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-center">
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle nav-dropdown text-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                探索
+          <p class="p-3 ps-6 d-xl-none d-block">探索全部</p>
+          <ul class="navbar-nav d-xl-none d-flex">
+            <li>
+              <a href="#" class="dropdown-item d-flex align-items-center justify-content-between p-3 ps-6">音樂
+                <span class="material-symbols-outlined fs-6 align-middle">keyboard_arrow_right</span>
               </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">音樂</a></li>
-                <li><a class="dropdown-item" href="#">攝影</a></li>
-                <li><a class="dropdown-item" href="#">程式</a></li>
-              </ul>
             </li>
-            <li class="nav-item d-lg-block d-none">
-              <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-primary" type="submit">Search</button>
-              </form>
+            <li>
+              <a href="#" class="dropdown-item d-flex align-items-center justify-content-between p-3 ps-6">攝影
+                <span class="material-symbols-outlined fs-6 align-middle">keyboard_arrow_right</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="dropdown-item d-flex align-items-center justify-content-between p-3 ps-6">程式
+                <span class="material-symbols-outlined fs-6 align-middle">keyboard_arrow_right</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="dropdown-item d-flex align-items-center justify-content-between p-3 ps-6">程式
+                <span class="material-symbols-outlined fs-6 align-middle">keyboard_arrow_right</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="dropdown-item d-flex align-items-center justify-content-between p-3 ps-6">藝術
+                <span class="material-symbols-outlined fs-6 align-middle">keyboard_arrow_right</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="dropdown-item d-flex align-items-center justify-content-between p-3 ps-6">人文
+                <span class="material-symbols-outlined fs-6 align-middle">keyboard_arrow_right</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="dropdown-item d-flex align-items-center justify-content-between p-3 ps-6">行銷
+                <span class="material-symbols-outlined fs-6 align-middle">keyboard_arrow_right</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="dropdown-item d-flex align-items-center justify-content-between p-3 ps-6">投資理財
+                <span class="material-symbols-outlined fs-6 align-middle">keyboard_arrow_right</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="dropdown-item d-flex align-items-center justify-content-between p-3 ps-6">心靈成長
+                <span class="material-symbols-outlined fs-6 align-middle">keyboard_arrow_right</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="dropdown-item d-flex align-items-center justify-content-between p-3 ps-6">職場技能
+                <span class="material-symbols-outlined fs-6 align-middle">keyboard_arrow_right</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="dropdown-item d-flex align-items-center justify-content-between p-3 ps-6">生活品味
+                <span class="material-symbols-outlined fs-6 align-middle">keyboard_arrow_right</span>
+              </a>
             </li>
           </ul>
-          <a href="signin.html" class="btn btn-primary">登入 / 註冊</a>
+        </div>
+
+        <div class="p-xl-0 py-3 px-6 border-top border-xl-0">
+          <a href="signin.html" class="btn btn-primary w-100 w-xl-auto">登入 / 註冊</a>
         </div>
         
       </div>
