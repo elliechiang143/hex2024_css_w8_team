@@ -1,5 +1,5 @@
 .banner-img-radius {
-  border-radius: 80px;
+  border-radius: 0pxd;
 }
 
 .banner-non-center {
@@ -7,20 +7,16 @@
 }
 
 .banner-left-bottom-Text{
-  
-  bottom: 0px;
-  left: 0px;
-  border-bottom-left-radius: 80px;
-  border-top-right-radius: 80px;
+  width: 100%;
 }
 
 
 .swiper-slide {
-  width: 1600px;
+  max-width: 1600px;
 }
 .swiper-button-next {
   position: absolute;
-  right: calc((100% - 1600px) / 2 - 20px);
+  right: 20px;
   top: 50%;
   transform: translateY(-50%);
   z-index: 10; 
@@ -29,10 +25,30 @@
 
 .swiper-button-prev {
   position: absolute;
-  left: calc((100% - 1600px) / 2 - 20px); 
+  left: 20px;
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
+}
+
+@media (min-width: 1600px) {
+  
+  .banner-left-bottom-Text{
+    border-bottom-left-radius: 80px;
+    border-top-right-radius: 80px;
+    width: auto;
+  }
+  .banner-img-radius {
+    border-radius: 80px;
+  }
+
+  .swiper-button-next {
+    right: calc((100% - 1600px) / 2 - 20px);
+  }
+  
+  .swiper-button-prev {
+    left: calc((100% - 1600px) / 2 - 20px); 
+  }
 }
 
 .swiper-button-next::after,
