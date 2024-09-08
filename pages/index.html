@@ -1,38 +1,101 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-tw">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>2024切版直播班第八週 - 線上課程網站</title>
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <style>
+      .swiper-slide {
+        width: 1600px;
+      }
+    </style>
   </head>
   <body>
     <%- include('./layout/nav'); -%>
 
-    <div class="container-fluid">
-      <!-- orignal code -->
+    <!-- orignal code -->
 
-      <div
-        class="d-flex overflow-x-hidden justify-content-center gap-10 position-relative"
-      >
-        <a href="#" class="btn btn-light position-absolute"></a>
-        <img
-          class="banner-img-radius banner-non-center"
-          src="../assets/images/hero-1.png"
-          alt=""
-        />
-        <img
-          class="banner-img-radius"
-          src="../assets/images/hero-2.png"
-          alt=""
-        />
-        <img
-          class="banner-img-radius banner-non-center"
-          src="../assets/images/hero-3.png"
-          alt=""
-        />
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div>
+            <img
+              class="banner-img-radius"
+              src="../assets/images/hero-1.png"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="position-relative">
+            <img
+              class="banner-img-radius"
+              src="../assets/images/hero-2.png"
+              alt=""
+            />
+            <div
+              class="position-absolute d-flex gap-2 p-4 align-items-center bg-white rounded-pill"
+              style="bottom: 144px; left: 40px"
+            >
+              <div class="py-2 px-3 rounded-pill bg-primary-10">
+                <span class="fs-8 text-primary">熱銷課程</span>
+                <span
+                  class="fs-7 font-icon material-symbols-outlined text-danger"
+                  >local_fire_department</span
+                >
+              </div>
+              <span class="fs-6 fw-bold"
+                >給成人的鋼琴入門課，一小時教你彈奏上手！</span
+              >
+            </div>
+            <div
+              class="position-absolute py-8 ps-22 pe-20 bg-primary text-white banner-left-bottom-Text d-flex gap-4 align-items-center"
+            >
+              <h2>探索感興趣的課程，今天立即上課</h2>
+              <span class="fs-2 material-symbols-outlined">
+                arrow_forward
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div>
+            <img
+              class="banner-img-radius"
+              src="../assets/images/hero-3.png"
+              alt=""
+            />
+          </div>
+        </div>
       </div>
+      <div class="swiper-button-next">
+        <div
+          class="d-flex align-items-center justify-content-center p-5 bg-white rounded"
+        >
+          <span class="fs-2 material-symbols-outlined"> arrow_forward </span>
+        </div>
+      </div>
+      <div class="swiper-button-prev">
+        <div
+          class="d-flex align-items-center justify-content-center p-5 bg-white rounded"
+        >
+          <span class="fs-2 material-symbols-outlined"> arrow_back </span>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
     </div>
+
     <!-- hot course -->
     <div class="container-fluid position-relative">
       <img
@@ -560,5 +623,41 @@
     <%- include('./layout/footer'); -%>
 
     <script type="module" src="../main.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        cssMode: true,
+        slidesPerView: "auto",
+        centeredSlides: true,
+        spaceBetween: 40,
+        initialSlide: 1,
+        effect: "slide",
+        fadeEffect: {
+          crossFade: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        mousewheel: true,
+        keyboard: true,
+        on: {
+          init: function () {
+            this.slides.forEach((slide, index) => {
+              slide.style.opacity = index === this.activeIndex ? "1" : "0.5";
+            });
+          },
+          slideChange: function () {
+            this.slides.forEach((slide, index) => {
+              slide.style.opacity = index === this.activeIndex ? "1" : "0.5";
+            });
+          },
+        },
+      });
+    </script>
   </body>
 </html>
