@@ -6,8 +6,8 @@
   opacity: 70%;
 }
 
-.banner-left-bottom-Text{
-  
+.banner-left-bottom-Text {
+
   bottom: 0px;
   left: 0px;
   border-bottom-left-radius: 80px;
@@ -18,27 +18,29 @@
 .swiper-slide {
   width: 1600px;
 }
+
 .swiper-button-next {
   position: absolute;
   right: calc((100% - 1600px) / 2 - 20px);
   top: 50%;
   transform: translateY(-50%);
-  z-index: 10; 
+  z-index: 10;
 }
 
 
 .swiper-button-prev {
   position: absolute;
-  left: calc((100% - 1600px) / 2 - 20px); 
+  left: calc((100% - 1600px) / 2 - 20px);
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
 }
 
 .swiper-button-next::after,
-  .swiper-button-prev::after {
-    display: none; /* 隱藏箭頭圖標，方便自定義圖標 */
-  }
+.swiper-button-prev::after {
+  display: none;
+  /* 隱藏箭頭圖標，方便自定義圖標 */
+}
 
 
 .card-shadow {
@@ -87,6 +89,57 @@
     left: -240px;
     bottom: 120px;
   }
+}
+
+.learn-section {
+  margin: 0 auto;
+  max-width: 1656px;
+  border-radius: 80px;
+  padding: 5rem 11.25rem;
+
+  .learn-icon {
+    border-radius: 1rem;
+  }
+
+  .megaphoneSimple-icon {
+    background-color: #FF994F;
+  }
+
+  .camera-icon {
+    background-color: #5E5E5E;
+  }
+
+  .self-learn-icon {
+    background-color: #FF9BAD;
+  }
+
+  .penNib-icon {
+    background-color: #564FFD;
+
+  }
+
+  .bugDroid-icon {
+    background-color: #54DFF2;
+  }
+
+  .creditCard-icon {
+    background-color: #52E9BC;
+  }
+
+  .headphones-icon {
+    background-color: #CF93FF;
+  }
+}
+
+
+
+.course-title {
+  color: #1D2026;
+
+}
+
+.course-word {
+  color: #6E7485;
 }
 
 .teacher-bg {
