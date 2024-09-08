@@ -6,7 +6,7 @@
   opacity: 70%;
 }
 
-.banner-left-bottom-Text{
+.banner-left-bottom-Text {
   width: 100%;
 }
 
@@ -14,12 +14,13 @@
 .swiper-slide {
   max-width: 1600px;
 }
+
 .swiper-button-next {
   position: absolute;
   right: 0px;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 10; 
+  z-index: 10;
 }
 
 
@@ -32,12 +33,13 @@
 }
 
 @media (min-width: 1600px) {
-  
-  .banner-left-bottom-Text{
+
+  .banner-left-bottom-Text {
     border-bottom-left-radius: 80px;
     border-top-right-radius: 80px;
     width: auto;
   }
+
   .banner-img-radius {
     border-radius: 80px;
   }
@@ -45,16 +47,17 @@
   .swiper-next {
     right: calc((100% - 1600px) / 2 - 20px);
   }
-  
+
   .swiper-prev {
-    left: calc((100% - 1600px) / 2 - 20px); 
+    left: calc((100% - 1600px) / 2 - 20px);
   }
 }
 
 .swiper-button-next::after,
-  .swiper-button-prev::after {
-    display: none; /* 隱藏箭頭圖標，方便自定義圖標 */
-  }
+.swiper-button-prev::after {
+  display: none;
+  /* 隱藏箭頭圖標，方便自定義圖標 */
+}
 
 
 .card-shadow {
@@ -88,7 +91,7 @@
   background: linear-gradient(180deg, #F0F6FF 0%, #FFFFFF 100%);
 }
 
-.bought-title-img {
+.background-title-img {
   top: -24px;
   left: -24px;
   z-index: -10;
@@ -104,7 +107,72 @@
   }
 }
 
+.learn-section {
+  margin: 0 auto;
+  max-width: 1656px;
+  border-radius: 80px;
+  padding: 5rem 1rem;
+
+  @include media-breakpoint-up(sm) {
+    padding: 5rem 2rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: 5rem 11.25rem;
+  }
+
+  .learn-icon {
+    border-radius: 1rem;
+  }
+
+  .megaphoneSimple-icon {
+    background-color: #FF994F;
+  }
+
+  .camera-icon {
+    background-color: #5E5E5E;
+  }
+
+  .self-learn-icon {
+    background-color: #FF9BAD;
+  }
+
+  .penNib-icon {
+    background-color: #564FFD;
+
+  }
+
+  .bugDroid-icon {
+    background-color: #54DFF2;
+  }
+
+  .creditCard-icon {
+    background-color: #52E9BC;
+  }
+
+  .headphones-icon {
+    background-color: #CF93FF;
+  }
+}
+
+
+
+.course-title {
+  color: #1D2026;
+
+}
+
+.course-word {
+  color: #6E7485;
+}
+
 .teacher-bg {
   background-image: url(/assets/images/deco/line-1.png);
-  background-repeat: cover;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.teacher-card {
+  margin-top: -6.25rem;
+  z-index: 5;
 }
