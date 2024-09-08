@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-tw">
   <head>
     <meta charset="UTF-8" />
@@ -13,8 +13,8 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-    <script type="module" crossorigin src="/hex2024_css_w8_team/assets/main-10b2f5bc.js"></script>
-    <link rel="stylesheet" href="/hex2024_css_w8_team/assets/main-75e29ca3.css">
+    <script type="module" crossorigin src="/hex2024_css_w8_team/assets/main-7672dbcb.js"></script>
+    <link rel="stylesheet" href="/hex2024_css_w8_team/assets/main-7a256240.css">
   </head>
   <body>
     <div class="container">
@@ -399,22 +399,59 @@
           </div>
         </div>
       </div>
-      <div class="swiper-button-next d-none d-lg-flex">
+      <div class="swiper-button-next swiper-next">
         <div
-          class="d-flex align-items-center justify-content-center p-5 bg-white rounded"
+          class="d-flex align-items-center justify-content-center p-4 bg-white rounded"
         >
-          <span class="fs-2 material-symbols-outlined"> arrow_forward </span>
+          <span class="fs-7 material-symbols-outlined"> arrow_forward </span>
         </div>
       </div>
-      <div class="swiper-button-prev d-none d-lg-flex">
+      <div class="swiper-button-prev swiper-prev">
         <div
-          class="d-flex align-items-center justify-content-center p-5 bg-white rounded"
+          class="d-flex align-items-center justify-content-center p-4 bg-white rounded"
         >
-          <span class="fs-2 material-symbols-outlined"> arrow_back </span>
+          <span class="fs-7 material-symbols-outlined"> arrow_back </span>
         </div>
       </div>
       <div class="swiper-pagination"></div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        cssMode: true,
+        slidesPerView: "auto",
+        centeredSlides: true,
+        spaceBetween: 40,
+        initialSlide: 1,
+        effect: "slide",
+        fadeEffect: {
+          crossFade: true,
+        },
+        mousewheel: true,
+        keyboard: true,
+        on: {
+          init: function () {
+            this.slides.forEach((slide, index) => {
+              slide.style.opacity = index === this.activeIndex ? "1" : "0.5";
+            });
+          },
+          slideChange: function () {
+            this.slides.forEach((slide, index) => {
+              slide.style.opacity = index === this.activeIndex ? "1" : "0.5";
+            });
+          },
+        },
+        breakpoints: {
+          768: {
+            navigation: {
+              nextEl: ".swiper-next",
+              prevEl: ".swiper-prev",
+            },
+          },
+        },
+      });
+    </script>
 
     <!-- hot course -->
     <div class="container-fluid position-relative mt-0 mt-lg-18">
@@ -467,198 +504,210 @@
               更多募資課程
             </button>
           </div>
-          <div class="col">
-            <div class="row gy-6">
-              <div class="col-lg-6">
-                <div class="card position-relative">
-                  <span
-                    class="badge rounded-pill py-2 px-4 text-primary bg-primary-10 card-badge position-absolute"
-                    >優惠倒數 10 天</span
-                  >
-                  <img
-                    src="/hex2024_css_w8_team/assets/course-4-e273136f.png"
-                    class="card-img-top"
-                    alt="..."
-                  />
-                  <div class="card-body card-shadow">
-                    <h5 class="card-title">
-                      創意寫作工坊：從靈感到出版的全過程
-                    </h5>
-                    <div class="card-content d-flex align-items-center mb-lg-6">
-                      <img
-                        class="object-fit-cover me-2 rounded-circle"
-                        style="width: 44px"
-                        src="/hex2024_css_w8_team/assets/tutor-1-942334c8.png"
-                        alt=""
-                      />
-                      <p class="card-text text-neutral-80">Kelly Hsu</p>
-                    </div>
-                    <div class="progross d-flex justify-content-between">
-                      <p class="fw-semibold text-primary">募資進度 81 %</p>
-                      <p class="fs-8">已有 521 位同學加入</p>
-                    </div>
-                    <div class="progress my-2">
+          <div class="col-lg-8">
+            <div class="swiper mySwiper1">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="card position-relative">
+                    <span
+                      class="badge rounded-pill py-2 px-4 text-primary bg-primary-10 card-badge position-absolute"
+                      >優惠倒數 10 天</span
+                    >
+                    <img
+                      src="/hex2024_css_w8_team/assets/course-4-e273136f.png"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                    <div class="card-body card-shadow">
+                      <h5 class="card-title">
+                        創意寫作工坊：從靈感到出版的全過程
+                      </h5>
                       <div
-                        class="progress-bar"
-                        role="progressbar"
-                        style="width: 81%"
-                        aria-valuenow="81"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
-                    <div class="ntd">
-                      <p class="fs-6 fw-semibold">
-                        NT$ 2,480
-                        <del class="ms-2 fs-8 fw-normal del-word"
-                          >NT$ 3,200</del
-                        >
-                      </p>
+                        class="card-content d-flex align-items-center mb-lg-6"
+                      >
+                        <img
+                          class="object-fit-cover me-2 rounded-circle"
+                          style="width: 44px"
+                          src="/hex2024_css_w8_team/assets/tutor-1-942334c8.png"
+                          alt=""
+                        />
+                        <p class="card-text text-neutral-80">Kelly Hsu</p>
+                      </div>
+                      <div class="progross d-flex justify-content-between">
+                        <p class="fw-semibold text-primary">募資進度 81 %</p>
+                        <p class="fs-8">已有 521 位同學加入</p>
+                      </div>
+                      <div class="progress my-2">
+                        <div
+                          class="progress-bar"
+                          role="progressbar"
+                          style="width: 81%"
+                          aria-valuenow="81"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        ></div>
+                      </div>
+                      <div class="ntd">
+                        <p class="fs-6 fw-semibold">
+                          NT$ 2,480
+                          <del class="ms-2 fs-8 fw-normal del-word"
+                            >NT$ 3,200</del
+                          >
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="card position-relative">
-                  <span
-                    class="badge rounded-pill py-2 px-4 text-primary bg-primary-10 card-badge position-absolute"
-                    >優惠倒數 17 天</span
-                  >
-                  <img
-                    src="/hex2024_css_w8_team/assets/course-1-5aa38dad.png"
-                    class="card-img-top"
-                    alt="..."
-                  />
-                  <div class="card-body card-shadow">
-                    <h5 class="card-title">健康廚房：營養均衡的素食料理指南</h5>
-                    <div class="card-content d-flex align-items-center mb-lg-6">
-                      <img
-                        class="object-fit-cover me-2 rounded-circle"
-                        style="width: 44px"
-                        src="/hex2024_css_w8_team/assets/tutor-2-cd5c4523.png"
-                        alt=""
-                      />
-                      <p class="card-text text-neutral-80">希姐帶你吃</p>
-                    </div>
-                    <div class="progross d-flex justify-content-between">
-                      <p class="fw-semibold text-primary">募資進度 281 %</p>
-                      <p class="fs-8">已有 1,397 位同學加入</p>
-                    </div>
-                    <div class="progress my-2">
+                <div class="swiper-slide">
+                  <div class="card position-relative">
+                    <span
+                      class="badge rounded-pill py-2 px-4 text-primary bg-primary-10 card-badge position-absolute"
+                      >優惠倒數 17 天</span
+                    >
+                    <img
+                      src="/hex2024_css_w8_team/assets/course-1-5aa38dad.png"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                    <div class="card-body card-shadow">
+                      <h5 class="card-title">
+                        健康廚房：營養均衡的素食料理指南
+                      </h5>
                       <div
-                        class="progress-bar"
-                        role="progressbar"
-                        style="width: 281%"
-                        aria-valuenow="281"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
-                    <div class="ntd">
-                      <p class="fs-6 fw-semibold">
-                        NT$ 1,680
-                        <del class="ms-2 fs-8 fw-normal del-word"
-                          >NT$ 2,980</del
-                        >
-                      </p>
+                        class="card-content d-flex align-items-center mb-lg-6"
+                      >
+                        <img
+                          class="object-fit-cover me-2 rounded-circle"
+                          style="width: 44px"
+                          src="/hex2024_css_w8_team/assets/tutor-2-cd5c4523.png"
+                          alt=""
+                        />
+                        <p class="card-text text-neutral-80">希姐帶你吃</p>
+                      </div>
+                      <div class="progross d-flex justify-content-between">
+                        <p class="fw-semibold text-primary">募資進度 281 %</p>
+                        <p class="fs-8">已有 1,397 位同學加入</p>
+                      </div>
+                      <div class="progress my-2">
+                        <div
+                          class="progress-bar"
+                          role="progressbar"
+                          style="width: 281%"
+                          aria-valuenow="281"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        ></div>
+                      </div>
+                      <div class="ntd">
+                        <p class="fs-6 fw-semibold">
+                          NT$ 1,680
+                          <del class="ms-2 fs-8 fw-normal del-word"
+                            >NT$ 2,980</del
+                          >
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="card position-relative">
-                  <span
-                    class="badge rounded-pill py-2 px-4 text-primary bg-primary-10 card-badge position-absolute"
-                    >優惠倒數 9 天</span
-                  >
-                  <img
-                    src="/hex2024_css_w8_team/assets/course-2-af95b296.png"
-                    class="card-img-top"
-                    alt="..."
-                  />
-                  <div class="card-body card-shadow">
-                    <h5 class="card-title">
-                      音樂製作入門：從零開始創作你的音樂
-                    </h5>
-                    <div class="card-content d-flex align-items-center mb-lg-6">
-                      <img
-                        class="object-fit-cover me-2 rounded-circle"
-                        style="width: 44px"
-                        src="/hex2024_css_w8_team/assets/tutor-3-e44dc260.png"
-                        alt=""
-                      />
-                      <p class="card-text text-neutral-80">K.Dee</p>
-                    </div>
-                    <div class="progross d-flex justify-content-between">
-                      <p class="fw-semibold text-primary">募資進度 76 %</p>
-                      <p class="fs-8">已有 420 位同學加入</p>
-                    </div>
-                    <div class="progress my-2">
+                <div class="swiper-slide">
+                  <div class="card position-relative">
+                    <span
+                      class="badge rounded-pill py-2 px-4 text-primary bg-primary-10 card-badge position-absolute"
+                      >優惠倒數 9 天</span
+                    >
+                    <img
+                      src="/hex2024_css_w8_team/assets/course-2-af95b296.png"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                    <div class="card-body card-shadow">
+                      <h5 class="card-title">
+                        音樂製作入門：從零開始創作你的音樂
+                      </h5>
                       <div
-                        class="progress-bar"
-                        role="progressbar"
-                        style="width: 76%"
-                        aria-valuenow="76"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
-                    <div class="ntd">
-                      <p class="fs-6 fw-semibold">
-                        NT$ 2,680
-                        <del class="ms-2 fs-8 fw-normal del-word"
-                          >NT$ 3,200</del
-                        >
-                      </p>
+                        class="card-content d-flex align-items-center mb-lg-6"
+                      >
+                        <img
+                          class="object-fit-cover me-2 rounded-circle"
+                          style="width: 44px"
+                          src="/hex2024_css_w8_team/assets/tutor-3-e44dc260.png"
+                          alt=""
+                        />
+                        <p class="card-text text-neutral-80">K.Dee</p>
+                      </div>
+                      <div class="progross d-flex justify-content-between">
+                        <p class="fw-semibold text-primary">募資進度 76 %</p>
+                        <p class="fs-8">已有 420 位同學加入</p>
+                      </div>
+                      <div class="progress my-2">
+                        <div
+                          class="progress-bar"
+                          role="progressbar"
+                          style="width: 76%"
+                          aria-valuenow="76"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        ></div>
+                      </div>
+                      <div class="ntd">
+                        <p class="fs-6 fw-semibold">
+                          NT$ 2,680
+                          <del class="ms-2 fs-8 fw-normal del-word"
+                            >NT$ 3,200</del
+                          >
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="card position-relative">
-                  <span
-                    class="badge rounded-pill py-2 px-4 text-primary bg-primary-10 card-badge position-absolute"
-                    >優惠倒數 1 天</span
-                  >
-                  <img
-                    src="/hex2024_css_w8_team/assets/course-3-a0bf74b7.png"
-                    class="card-img-top"
-                    alt="..."
-                  />
-                  <div class="card-body card-shadow">
-                    <h5 class="card-title">
-                      掌握商業攝影：打造你的專業攝影事業
-                    </h5>
-                    <div class="card-content d-flex align-items-center mb-lg-6">
-                      <img
-                        class="object-fit-cover me-2 rounded-circle"
-                        style="width: 44px"
-                        src="/hex2024_css_w8_team/assets/tutor-4-b54b5d28.png"
-                        alt=""
-                      />
-                      <p class="card-text text-neutral-80">Mikeeee</p>
-                    </div>
-                    <div class="progross d-flex justify-content-between">
-                      <p class="fw-semibold text-primary">募資進度 98 %</p>
-                      <p class="fs-8">已有 290 位同學加入</p>
-                    </div>
-                    <div class="progress my-2">
+                <div class="swiper-slide">
+                  <div class="card position-relative">
+                    <span
+                      class="badge rounded-pill py-2 px-4 text-primary bg-primary-10 card-badge position-absolute"
+                      >優惠倒數 1 天</span
+                    >
+                    <img
+                      src="/hex2024_css_w8_team/assets/course-3-a0bf74b7.png"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                    <div class="card-body card-shadow">
+                      <h5 class="card-title">
+                        掌握商業攝影：打造你的專業攝影事業
+                      </h5>
                       <div
-                        class="progress-bar"
-                        role="progressbar"
-                        style="width: 98%"
-                        aria-valuenow="98"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
-                    <div class="ntd">
-                      <p class="fs-6 fw-semibold">
-                        NT$ 1,980
-                        <del class="ms-2 fs-8 fw-normal del-word"
-                          >NT$ 3,200</del
-                        >
-                      </p>
+                        class="card-content d-flex align-items-center mb-lg-6"
+                      >
+                        <img
+                          class="object-fit-cover me-2 rounded-circle"
+                          style="width: 44px"
+                          src="/hex2024_css_w8_team/assets/tutor-4-b54b5d28.png"
+                          alt=""
+                        />
+                        <p class="card-text text-neutral-80">Mikeeee</p>
+                      </div>
+                      <div class="progross d-flex justify-content-between">
+                        <p class="fw-semibold text-primary">募資進度 98 %</p>
+                        <p class="fs-8">已有 290 位同學加入</p>
+                      </div>
+                      <div class="progress my-2">
+                        <div
+                          class="progress-bar"
+                          role="progressbar"
+                          style="width: 98%"
+                          aria-valuenow="98"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        ></div>
+                      </div>
+                      <div class="ntd">
+                        <p class="fs-6 fw-semibold">
+                          NT$ 1,980
+                          <del class="ms-2 fs-8 fw-normal del-word"
+                            >NT$ 3,200</del
+                          >
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -668,6 +717,41 @@
         </div>
       </div>
     </div>
+
+    <script>
+      var swiper = new Swiper(".mySwiper1", {
+        initialSlide: 1,
+        effect: "slide",
+        fadeEffect: {
+          crossFade: true,
+        },
+        mousewheel: true,
+        keyboard: true,
+        breakpoints: {
+          320: {
+            spaceBetween: 24,
+            slidesPerView: 1,
+            grid: {
+              rows: 1,
+              fill: "row",
+            },
+            allowTouchMove: true,
+            loop: true,
+          },
+          768: {
+            spaceBetween: 24,
+            slidesPerView: 2,
+            grid: {
+              rows: 2,
+              fill: "row",
+            },
+            allowTouchMove: false,
+            loop: false,
+          },
+        },
+      });
+    </script>
+
     <!-- everybody bought -->
     <div class="container-fluid position-relative bought-bg">
       <img
@@ -676,22 +760,6 @@
         class="position-absolute bought-img"
       />
       <div class="container py-20 py-lg-22 position-relative">
-        <a>
-          <img
-            style="z-index: 10"
-            class="position-absolute top-50 start-0 translate-y-middle"
-            src="/hex2024_css_w8_team/assets/btn_l-44b150d3.png"
-            alt=""
-          />
-        </a>
-        <a href="">
-          <img
-            style="z-index: 10"
-            class="position-absolute top-50 end-0 translate-y-middle"
-            src="/hex2024_css_w8_team/assets/btn_r-6b1a304d.png"
-            alt=""
-          />
-        </a>
         <div
           class="bought-title d-flex flex-column align-items-start align-items-lg-center mb-10"
         >
@@ -706,231 +774,318 @@
           </div>
           <p class="fs-6 fw-normal text-neutral-80">熱銷課程一次看！✨</p>
         </div>
-        <div class="row gy-6">
-          <div class="col-lg-3">
-            <div class="card position-relative">
-              <span
-                class="badge rounded-pill py-2 px-4 text-danger bg-danger-10 card-badge position-absolute"
-                >限時 8 折 🔥</span
-              >
-              <img
-                src="/hex2024_css_w8_team/assets/course-4-e273136f.png"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body card-shadow">
-                <h5 class="card-title">創意寫作工坊：從靈感到出版的全過程</h5>
-                <div
-                  class="card-content d-flex justify-content-between align-items-center mb-lg-6"
+
+        <div class="swiper mySwiper2">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="card position-relative">
+                <span
+                  class="badge rounded-pill py-2 px-4 text-danger bg-danger-10 card-badge position-absolute"
+                  >限時 8 折 🔥</span
                 >
-                  <div class="tutor d-flex align-items-center">
-                    <img
-                      class="object-fit-cover me-2 rounded-circle"
-                      style="width: 44px"
-                      src="/hex2024_css_w8_team/assets/tutor-1-942334c8.png"
-                      alt=""
-                    />
-                    <p class="card-text text-neutral-80">Kelly Hsu</p>
+                <img
+                  src="/hex2024_css_w8_team/assets/course-4-e273136f.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body card-shadow">
+                  <h5 class="card-title">創意寫作工坊：從靈感到出版的全過程</h5>
+                  <div
+                    class="card-content d-flex justify-content-between align-items-center mb-lg-6"
+                  >
+                    <div class="tutor d-flex align-items-center">
+                      <img
+                        class="object-fit-cover me-2 rounded-circle"
+                        style="width: 44px"
+                        src="/hex2024_css_w8_team/assets/tutor-1-942334c8.png"
+                        alt=""
+                      />
+                      <p class="card-text text-neutral-80">Kelly Hsu</p>
+                    </div>
+                    <div class="ntd d-flex flex-column align-items-end">
+                      <p class="fs-6 fw-semibold text-primary">NT$ 2,480</p>
+                      <del class="ms-2 fs-8 fw-normal del-word">NT$ 3,200</del>
+                    </div>
                   </div>
-                  <div class="ntd d-flex flex-column align-items-end">
-                    <p class="fs-6 fw-semibold text-primary">NT$ 2,480</p>
-                    <del class="ms-2 fs-8 fw-normal del-word">NT$ 3,200</del>
+                  <hr />
+                  <div class="d-flex justify-content-between">
+                    <!-- tag-join -->
+                    <div class="d-flex flex-column align-items-start">
+                      <span
+                        class="badge rounded-pill py-1 px-4 fs-8 fw-normal text-neutral-80 bg-neutral-40"
+                        >中文創作</span
+                      >
+                      <p class="fs-8 mt-1 text-neutral-80">
+                        已有 420 位同學加入
+                      </p>
+                    </div>
+                    <!-- evaluate -->
+                    <div class="d-flex align-items-center">
+                      <img
+                        class="me-1"
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAANCAYAAACdKY9CAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADgSURBVHgBnZJBDoIwEEVnGlEkxuAJrDvjqkcQPYh6Aj2SN3Bp4oZ4Aza6xhPAzgSQcSBAUCok/kWTdv6f9k0KoFFwknbgKltXE7pDczza95LooKtho/t5Lgd94RKgHQljNnG8sPUGs9/bcB/JnWzdLRhcFsoQtBWAU0BUfCY/HAQeL34K9IhTPGIGN6DY5YKCNiF4QzScnKEzVJqZp4LOQ2kcfHsJILQYHgt4AR3K4OtjqgJmktSeQ1d2+uXOiCPZCLyAVGbEFB1rfV9aq9uMJ7Mrgk02+vEVMj1dJeFfvQEt9k4GRY8ejgAAAABJRU5ErkJggg=="
+                        alt=""
+                      />
+                      <div class="d-flex fs-8">
+                        <p class="me-1">4.0</p>
+                        <p class="del-word">(333)</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <hr />
-                <div class="d-flex justify-content-between">
-                  <!-- tag-join -->
-                  <div class="d-flex flex-column align-items-start">
-                    <span
-                      class="badge rounded-pill py-1 px-4 fs-8 fw-normal text-neutral-80 bg-neutral-40"
-                      >中文創作</span
-                    >
-                    <p class="fs-8 mt-1 text-neutral-80">已有 420 位同學加入</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card position-relative">
+                <span
+                  class="badge rounded-pill py-2 px-4 text-danger bg-danger-10 card-badge position-absolute"
+                  >限時 8 折 🔥</span
+                >
+                <img
+                  src="/hex2024_css_w8_team/assets/course-5-18abd620.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body card-shadow">
+                  <h5 class="card-title">
+                    小白也會！從零開始學習 Python 程式設計
+                  </h5>
+                  <div
+                    class="card-content d-flex justify-content-between align-items-center mb-lg-6"
+                  >
+                    <div class="tutor d-flex align-items-center">
+                      <img
+                        class="object-fit-cover me-2 rounded-circle"
+                        style="width: 44px"
+                        src="/hex2024_css_w8_team/assets/tutor-1-942334c8.png"
+                        alt=""
+                      />
+                      <p class="card-text text-neutral-80">Kelly Hsu</p>
+                    </div>
+                    <div class="ntd d-flex flex-column align-items-end">
+                      <p class="fs-6 fw-semibold text-primary">NT$ 2,480</p>
+                      <del class="ms-2 fs-8 fw-normal del-word">NT$ 3,200</del>
+                    </div>
                   </div>
-                  <!-- evaluate -->
-                  <div class="d-flex align-items-center">
-                    <img
-                      class="me-1"
-                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAANCAYAAACdKY9CAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADgSURBVHgBnZJBDoIwEEVnGlEkxuAJrDvjqkcQPYh6Aj2SN3Bp4oZ4Aza6xhPAzgSQcSBAUCok/kWTdv6f9k0KoFFwknbgKltXE7pDczza95LooKtho/t5Lgd94RKgHQljNnG8sPUGs9/bcB/JnWzdLRhcFsoQtBWAU0BUfCY/HAQeL34K9IhTPGIGN6DY5YKCNiF4QzScnKEzVJqZp4LOQ2kcfHsJILQYHgt4AR3K4OtjqgJmktSeQ1d2+uXOiCPZCLyAVGbEFB1rfV9aq9uMJ7Mrgk02+vEVMj1dJeFfvQEt9k4GRY8ejgAAAABJRU5ErkJggg=="
-                      alt=""
-                    />
-                    <div class="d-flex fs-8">
-                      <p class="me-1">4.0</p>
-                      <p class="del-word">(333)</p>
+                  <hr />
+                  <div class="d-flex justify-content-between">
+                    <!-- tag-join -->
+                    <div class="d-flex flex-column align-items-start">
+                      <span
+                        class="badge rounded-pill py-1 px-4 fs-8 fw-normal text-neutral-80 bg-neutral-40"
+                        >程式開發</span
+                      >
+                      <p class="fs-8 mt-1 text-neutral-80">
+                        已有 420 位同學加入
+                      </p>
+                    </div>
+                    <!-- evaluate -->
+                    <div class="d-flex align-items-center">
+                      <img
+                        class="me-1"
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAANCAYAAACdKY9CAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADgSURBVHgBnZJBDoIwEEVnGlEkxuAJrDvjqkcQPYh6Aj2SN3Bp4oZ4Aza6xhPAzgSQcSBAUCok/kWTdv6f9k0KoFFwknbgKltXE7pDczza95LooKtho/t5Lgd94RKgHQljNnG8sPUGs9/bcB/JnWzdLRhcFsoQtBWAU0BUfCY/HAQeL34K9IhTPGIGN6DY5YKCNiF4QzScnKEzVJqZp4LOQ2kcfHsJILQYHgt4AR3K4OtjqgJmktSeQ1d2+uXOiCPZCLyAVGbEFB1rfV9aq9uMJ7Mrgk02+vEVMj1dJeFfvQEt9k4GRY8ejgAAAABJRU5ErkJggg=="
+                        alt=""
+                      />
+                      <div class="d-flex fs-8">
+                        <p class="me-1">4.0</p>
+                        <p class="del-word">(333)</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card position-relative">
+                <span
+                  class="badge rounded-pill py-2 px-4 text-danger bg-danger-10 card-badge position-absolute"
+                  >限時 8 折 🔥</span
+                >
+                <img
+                  src="/hex2024_css_w8_team/assets/course-6-cb21fd70.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body card-shadow">
+                  <h5 class="card-title">全面掌握 JavaScript 開發技術</h5>
+                  <div
+                    class="card-content d-flex justify-content-between align-items-center mb-lg-6"
+                  >
+                    <div class="tutor d-flex align-items-center">
+                      <img
+                        class="object-fit-cover me-2 rounded-circle"
+                        style="width: 44px"
+                        src="/hex2024_css_w8_team/assets/tutor-1-942334c8.png"
+                        alt=""
+                      />
+                      <p class="card-text text-neutral-80">Kelly Hsu</p>
+                    </div>
+                    <div class="ntd d-flex flex-column align-items-end">
+                      <p class="fs-6 fw-semibold text-primary">NT$ 2,480</p>
+                      <del class="ms-2 fs-8 fw-normal del-word">NT$ 3,200</del>
+                    </div>
+                  </div>
+                  <hr />
+                  <div class="d-flex justify-content-between">
+                    <!-- tag-join -->
+                    <div class="d-flex flex-column align-items-start">
+                      <span
+                        class="badge rounded-pill py-1 px-4 fs-8 fw-normal text-neutral-80 bg-neutral-40"
+                        >程式開發</span
+                      >
+                      <p class="fs-8 mt-1 text-neutral-80">
+                        已有 420 位同學加入
+                      </p>
+                    </div>
+                    <!-- evaluate -->
+                    <div class="d-flex align-items-center">
+                      <img
+                        class="me-1"
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAANCAYAAACdKY9CAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADgSURBVHgBnZJBDoIwEEVnGlEkxuAJrDvjqkcQPYh6Aj2SN3Bp4oZ4Aza6xhPAzgSQcSBAUCok/kWTdv6f9k0KoFFwknbgKltXE7pDczza95LooKtho/t5Lgd94RKgHQljNnG8sPUGs9/bcB/JnWzdLRhcFsoQtBWAU0BUfCY/HAQeL34K9IhTPGIGN6DY5YKCNiF4QzScnKEzVJqZp4LOQ2kcfHsJILQYHgt4AR3K4OtjqgJmktSeQ1d2+uXOiCPZCLyAVGbEFB1rfV9aq9uMJ7Mrgk02+vEVMj1dJeFfvQEt9k4GRY8ejgAAAABJRU5ErkJggg=="
+                        alt=""
+                      />
+                      <div class="d-flex fs-8">
+                        <p class="me-1">4.0</p>
+                        <p class="del-word">(333)</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card position-relative">
+                <span
+                  class="badge rounded-pill py-2 px-4 text-danger bg-danger-10 card-badge position-absolute"
+                  >限時 8 折 🔥</span
+                >
+                <img
+                  src="/hex2024_css_w8_team/assets/course-7-9e3876e4.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body card-shadow">
+                  <h5 class="card-title">HTML & CSS 網頁設計基礎教程</h5>
+                  <div
+                    class="card-content d-flex justify-content-between align-items-center mb-lg-6"
+                  >
+                    <div class="tutor d-flex align-items-center">
+                      <img
+                        class="object-fit-cover me-2 rounded-circle"
+                        style="width: 44px"
+                        src="/hex2024_css_w8_team/assets/tutor-1-942334c8.png"
+                        alt=""
+                      />
+                      <p class="card-text text-neutral-80">Kelly Hsu</p>
+                    </div>
+                    <div class="ntd d-flex flex-column align-items-end">
+                      <p class="fs-6 fw-semibold text-primary">NT$ 2,480</p>
+                      <del class="ms-2 fs-8 fw-normal del-word">NT$ 3,200</del>
+                    </div>
+                  </div>
+                  <hr />
+                  <div class="d-flex justify-content-between">
+                    <!-- tag-join -->
+                    <div class="d-flex flex-column align-items-start">
+                      <span
+                        class="badge rounded-pill py-1 px-4 fs-8 fw-normal text-neutral-80 bg-neutral-40"
+                        >程式開發</span
+                      >
+                      <p class="fs-8 mt-1 text-neutral-80">
+                        已有 420 位同學加入
+                      </p>
+                    </div>
+                    <!-- evaluate -->
+                    <div class="d-flex align-items-center">
+                      <img
+                        class="me-1"
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAANCAYAAACdKY9CAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADgSURBVHgBnZJBDoIwEEVnGlEkxuAJrDvjqkcQPYh6Aj2SN3Bp4oZ4Aza6xhPAzgSQcSBAUCok/kWTdv6f9k0KoFFwknbgKltXE7pDczza95LooKtho/t5Lgd94RKgHQljNnG8sPUGs9/bcB/JnWzdLRhcFsoQtBWAU0BUfCY/HAQeL34K9IhTPGIGN6DY5YKCNiF4QzScnKEzVJqZp4LOQ2kcfHsJILQYHgt4AR3K4OtjqgJmktSeQ1d2+uXOiCPZCLyAVGbEFB1rfV9aq9uMJ7Mrgk02+vEVMj1dJeFfvQEt9k4GRY8ejgAAAABJRU5ErkJggg=="
+                        alt=""
+                      />
+                      <div class="d-flex fs-8">
+                        <p class="me-1">4.0</p>
+                        <p class="del-word">(333)</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card position-relative">
+                <span
+                  class="badge rounded-pill py-2 px-4 text-danger bg-danger-10 card-badge position-absolute"
+                  >限時 8 折 🔥</span
+                >
+                <img
+                  src="/hex2024_css_w8_team/assets/course-8-651d7ef2.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body card-shadow">
+                  <h5 class="card-title">
+                    更進一步！深入學習 Node.js 與後端開發
+                  </h5>
+                  <div
+                    class="card-content d-flex justify-content-between align-items-center mb-lg-6"
+                  >
+                    <div class="tutor d-flex align-items-center">
+                      <img
+                        class="object-fit-cover me-2 rounded-circle"
+                        style="width: 44px"
+                        src="/hex2024_css_w8_team/assets/tutor-1-942334c8.png"
+                        alt=""
+                      />
+                      <p class="card-text text-neutral-80">Kelly Hsu</p>
+                    </div>
+                    <div class="ntd d-flex flex-column align-items-end">
+                      <p class="fs-6 fw-semibold text-primary">NT$ 2,480</p>
+                      <del class="ms-2 fs-8 fw-normal del-word">NT$ 3,200</del>
+                    </div>
+                  </div>
+                  <hr />
+                  <div class="d-flex justify-content-between">
+                    <!-- tag-join -->
+                    <div class="d-flex flex-column align-items-start">
+                      <span
+                        class="badge rounded-pill py-1 px-4 fs-8 fw-normal text-neutral-80 bg-neutral-40"
+                        >程式開發</span
+                      >
+                      <p class="fs-8 mt-1 text-neutral-80">
+                        已有 420 位同學加入
+                      </p>
+                    </div>
+                    <!-- evaluate -->
+                    <div class="d-flex align-items-center">
+                      <img
+                        class="me-1"
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAANCAYAAACdKY9CAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADgSURBVHgBnZJBDoIwEEVnGlEkxuAJrDvjqkcQPYh6Aj2SN3Bp4oZ4Aza6xhPAzgSQcSBAUCok/kWTdv6f9k0KoFFwknbgKltXE7pDczza95LooKtho/t5Lgd94RKgHQljNnG8sPUGs9/bcB/JnWzdLRhcFsoQtBWAU0BUfCY/HAQeL34K9IhTPGIGN6DY5YKCNiF4QzScnKEzVJqZp4LOQ2kcfHsJILQYHgt4AR3K4OtjqgJmktSeQ1d2+uXOiCPZCLyAVGbEFB1rfV9aq9uMJ7Mrgk02+vEVMj1dJeFfvQEt9k4GRY8ejgAAAABJRU5ErkJggg=="
+                        alt=""
+                      />
+                      <div class="d-flex fs-8">
+                        <p class="me-1">4.0</p>
+                        <p class="del-word">(333)</p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-3">
-            <div class="card position-relative">
-              <span
-                class="badge rounded-pill py-2 px-4 text-danger bg-danger-10 card-badge position-absolute"
-                >限時 8 折 🔥</span
-              >
-              <img
-                src="/hex2024_css_w8_team/assets/course-5-18abd620.png"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body card-shadow">
-                <h5 class="card-title">
-                  小白也會！從零開始學習 Python 程式設計
-                </h5>
-                <div
-                  class="card-content d-flex justify-content-between align-items-center mb-lg-6"
-                >
-                  <div class="tutor d-flex align-items-center">
-                    <img
-                      class="object-fit-cover me-2 rounded-circle"
-                      style="width: 44px"
-                      src="/hex2024_css_w8_team/assets/tutor-1-942334c8.png"
-                      alt=""
-                    />
-                    <p class="card-text text-neutral-80">Kelly Hsu</p>
-                  </div>
-                  <div class="ntd d-flex flex-column align-items-end">
-                    <p class="fs-6 fw-semibold text-primary">NT$ 2,480</p>
-                    <del class="ms-2 fs-8 fw-normal del-word">NT$ 3,200</del>
-                  </div>
-                </div>
-                <hr />
-                <div class="d-flex justify-content-between">
-                  <!-- tag-join -->
-                  <div class="d-flex flex-column align-items-start">
-                    <span
-                      class="badge rounded-pill py-1 px-4 fs-8 fw-normal text-neutral-80 bg-neutral-40"
-                      >程式開發</span
-                    >
-                    <p class="fs-8 mt-1 text-neutral-80">已有 420 位同學加入</p>
-                  </div>
-                  <!-- evaluate -->
-                  <div class="d-flex align-items-center">
-                    <img
-                      class="me-1"
-                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAANCAYAAACdKY9CAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADgSURBVHgBnZJBDoIwEEVnGlEkxuAJrDvjqkcQPYh6Aj2SN3Bp4oZ4Aza6xhPAzgSQcSBAUCok/kWTdv6f9k0KoFFwknbgKltXE7pDczza95LooKtho/t5Lgd94RKgHQljNnG8sPUGs9/bcB/JnWzdLRhcFsoQtBWAU0BUfCY/HAQeL34K9IhTPGIGN6DY5YKCNiF4QzScnKEzVJqZp4LOQ2kcfHsJILQYHgt4AR3K4OtjqgJmktSeQ1d2+uXOiCPZCLyAVGbEFB1rfV9aq9uMJ7Mrgk02+vEVMj1dJeFfvQEt9k4GRY8ejgAAAABJRU5ErkJggg=="
-                      alt=""
-                    />
-                    <div class="d-flex fs-8">
-                      <p class="me-1">4.0</p>
-                      <p class="del-word">(333)</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+          <div class="swiper-button-next swiper2-next">
+            <div
+              class="d-flex align-items-center justify-content-center p-4 bg-white rounded"
+            >
+              <span class="fs-7 material-symbols-outlined">
+                arrow_forward
+              </span>
             </div>
           </div>
-          <div class="col-lg-3">
-            <div class="card position-relative">
-              <span
-                class="badge rounded-pill py-2 px-4 text-danger bg-danger-10 card-badge position-absolute"
-                >限時 8 折 🔥</span
-              >
-              <img
-                src="/hex2024_css_w8_team/assets/course-6-cb21fd70.png"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body card-shadow">
-                <h5 class="card-title">全面掌握 JavaScript 開發技術</h5>
-                <div
-                  class="card-content d-flex justify-content-between align-items-center mb-lg-6"
-                >
-                  <div class="tutor d-flex align-items-center">
-                    <img
-                      class="object-fit-cover me-2 rounded-circle"
-                      style="width: 44px"
-                      src="/hex2024_css_w8_team/assets/tutor-1-942334c8.png"
-                      alt=""
-                    />
-                    <p class="card-text text-neutral-80">Kelly Hsu</p>
-                  </div>
-                  <div class="ntd d-flex flex-column align-items-end">
-                    <p class="fs-6 fw-semibold text-primary">NT$ 2,480</p>
-                    <del class="ms-2 fs-8 fw-normal del-word">NT$ 3,200</del>
-                  </div>
-                </div>
-                <hr />
-                <div class="d-flex justify-content-between">
-                  <!-- tag-join -->
-                  <div class="d-flex flex-column align-items-start">
-                    <span
-                      class="badge rounded-pill py-1 px-4 fs-8 fw-normal text-neutral-80 bg-neutral-40"
-                      >程式開發</span
-                    >
-                    <p class="fs-8 mt-1 text-neutral-80">已有 420 位同學加入</p>
-                  </div>
-                  <!-- evaluate -->
-                  <div class="d-flex align-items-center">
-                    <img
-                      class="me-1"
-                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAANCAYAAACdKY9CAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADgSURBVHgBnZJBDoIwEEVnGlEkxuAJrDvjqkcQPYh6Aj2SN3Bp4oZ4Aza6xhPAzgSQcSBAUCok/kWTdv6f9k0KoFFwknbgKltXE7pDczza95LooKtho/t5Lgd94RKgHQljNnG8sPUGs9/bcB/JnWzdLRhcFsoQtBWAU0BUfCY/HAQeL34K9IhTPGIGN6DY5YKCNiF4QzScnKEzVJqZp4LOQ2kcfHsJILQYHgt4AR3K4OtjqgJmktSeQ1d2+uXOiCPZCLyAVGbEFB1rfV9aq9uMJ7Mrgk02+vEVMj1dJeFfvQEt9k4GRY8ejgAAAABJRU5ErkJggg=="
-                      alt=""
-                    />
-                    <div class="d-flex fs-8">
-                      <p class="me-1">4.0</p>
-                      <p class="del-word">(333)</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3">
-            <div class="card position-relative">
-              <span
-                class="badge rounded-pill py-2 px-4 text-danger bg-danger-10 card-badge position-absolute"
-                >限時 8 折 🔥</span
-              >
-              <img
-                src="/hex2024_css_w8_team/assets/course-7-9e3876e4.png"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body card-shadow">
-                <h5 class="card-title">HTML & CSS 網頁設計基礎教程</h5>
-                <div
-                  class="card-content d-flex justify-content-between align-items-center mb-lg-6"
-                >
-                  <div class="tutor d-flex align-items-center">
-                    <img
-                      class="object-fit-cover me-2 rounded-circle"
-                      style="width: 44px"
-                      src="/hex2024_css_w8_team/assets/tutor-1-942334c8.png"
-                      alt=""
-                    />
-                    <p class="card-text text-neutral-80">Kelly Hsu</p>
-                  </div>
-                  <div class="ntd d-flex flex-column align-items-end">
-                    <p class="fs-6 fw-semibold text-primary">NT$ 2,480</p>
-                    <del class="ms-2 fs-8 fw-normal del-word">NT$ 3,200</del>
-                  </div>
-                </div>
-                <hr />
-                <div class="d-flex justify-content-between">
-                  <!-- tag-join -->
-                  <div class="d-flex flex-column align-items-start">
-                    <span
-                      class="badge rounded-pill py-1 px-4 fs-8 fw-normal text-neutral-80 bg-neutral-40"
-                      >程式開發</span
-                    >
-                    <p class="fs-8 mt-1 text-neutral-80">已有 420 位同學加入</p>
-                  </div>
-                  <!-- evaluate -->
-                  <div class="d-flex align-items-center">
-                    <img
-                      class="me-1"
-                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAANCAYAAACdKY9CAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADgSURBVHgBnZJBDoIwEEVnGlEkxuAJrDvjqkcQPYh6Aj2SN3Bp4oZ4Aza6xhPAzgSQcSBAUCok/kWTdv6f9k0KoFFwknbgKltXE7pDczza95LooKtho/t5Lgd94RKgHQljNnG8sPUGs9/bcB/JnWzdLRhcFsoQtBWAU0BUfCY/HAQeL34K9IhTPGIGN6DY5YKCNiF4QzScnKEzVJqZp4LOQ2kcfHsJILQYHgt4AR3K4OtjqgJmktSeQ1d2+uXOiCPZCLyAVGbEFB1rfV9aq9uMJ7Mrgk02+vEVMj1dJeFfvQEt9k4GRY8ejgAAAABJRU5ErkJggg=="
-                      alt=""
-                    />
-                    <div class="d-flex fs-8">
-                      <p class="me-1">4.0</p>
-                      <p class="del-word">(333)</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+          <div class="swiper-button-prev swiper2-prev">
+            <div
+              class="d-flex align-items-center justify-content-center p-4 bg-white rounded"
+            >
+              <span class="fs-7 material-symbols-outlined"> arrow_back </span>
             </div>
           </div>
         </div>
@@ -1300,36 +1455,80 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- Initialize Swiper -->
+
     <script>
-      var swiper = new Swiper(".mySwiper", {
-        cssMode: true,
-        slidesPerView: "auto",
-        centeredSlides: true,
+      var swiper = new Swiper(".mySwiper2", {
         spaceBetween: 40,
         initialSlide: 1,
         effect: "slide",
         fadeEffect: {
           crossFade: true,
         },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
         mousewheel: true,
         keyboard: true,
-        on: {
-          init: function () {
-            this.slides.forEach((slide, index) => {
-              slide.style.opacity = index === this.activeIndex ? "1" : "0.5";
-            });
+        loop: true,
+        navigation: {
+          nextEl: ".swiper2-next",
+          prevEl: ".swiper2-prev",
+        },
+        breakpoints: {
+          375: {
+            slidesPerView: 1,
           },
-          slideChange: function () {
-            this.slides.forEach((slide, index) => {
-              slide.style.opacity = index === this.activeIndex ? "1" : "0.5";
-            });
+          768: {
+            slidesPerView: 4,
           },
         },
       });
     </script>
+
+    <div class="container-fluid teacher-bg">
+      <div class="container"></div>
+    </div>
+
+    <footer class="footer text-center py-12 py-md-21 bg-footer text-white">
+    <div class="container px-6">
+        <div class="d-flex mb-4 flex-column flex-md-row mb-10 mb-md-4">
+            <div class="me-auto mb-10 mb-md-0">
+                <img src="data:image/png;base64,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" alt="Learning" class="footer-logo">
+            </div>
+            <ul class="list-unstyled d-flex gap-6 gap-md-8 flex-column flex-md-row align-items-start align-items-md-center fs-8">
+                <li>
+                    <a href="#" class="link-opacity-75-hover link-white">常見問題</a>
+                </li>
+                <li>
+                    <a href="#" class="link-opacity-75-hover link-white">關於我們</a>
+                </li>
+                <li>
+                    <a href="#" class="link-opacity-75-hover link-white">隱私權政策</a>
+                </li>
+                <li>
+                    <a href="#" class="link-opacity-75-hover link-white">使用者條款</a>
+                </li>
+            </ul>
+        </div>
+        <div class="d-flex align-items-md-end flex-column-reverse flex-md-row">
+            <p class="me-auto fs-9 fs-md-7">copyright © 2024 LEARNING 課程網站 All Rights Reserved.</p>
+            <ul class="list-unstyled d-flex gap-4 mb-8 mb-md-0">
+                <li>
+                    <a href="#" class="border border-white rounded-pill footer-sns d-flex align-items-center justify-content-center">
+                        <i class="fs-6 bi bi-line"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="border border-white rounded-pill footer-sns d-flex align-items-center justify-content-center">
+                        <i class="fs-6 bi bi-youtube"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="border border-white rounded-pill footer-sns d-flex align-items-center justify-content-center">
+                        <i class="fs-6 bi bi-facebook"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</footer>
+    
   </body>
 </html>
