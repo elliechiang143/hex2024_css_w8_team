@@ -87,22 +87,59 @@
           </div>
         </div>
       </div>
-      <div class="swiper-button-next d-none d-lg-flex">
+      <div class="swiper-button-next swiper-next">
         <div
-          class="d-flex align-items-center justify-content-center p-5 bg-white rounded"
+          class="d-flex align-items-center justify-content-center p-4 bg-white rounded"
         >
-          <span class="fs-2 material-symbols-outlined"> arrow_forward </span>
+          <span class="fs-7 material-symbols-outlined"> arrow_forward </span>
         </div>
       </div>
-      <div class="swiper-button-prev d-none d-lg-flex">
+      <div class="swiper-button-prev swiper-prev">
         <div
-          class="d-flex align-items-center justify-content-center p-5 bg-white rounded"
+          class="d-flex align-items-center justify-content-center p-4 bg-white rounded"
         >
-          <span class="fs-2 material-symbols-outlined"> arrow_back </span>
+          <span class="fs-7 material-symbols-outlined"> arrow_back </span>
         </div>
       </div>
       <div class="swiper-pagination"></div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        cssMode: true,
+        slidesPerView: "auto",
+        centeredSlides: true,
+        spaceBetween: 40,
+        initialSlide: 1,
+        effect: "slide",
+        fadeEffect: {
+          crossFade: true,
+        },
+        mousewheel: true,
+        keyboard: true,
+        on: {
+          init: function () {
+            this.slides.forEach((slide, index) => {
+              slide.style.opacity = index === this.activeIndex ? "1" : "0.5";
+            });
+          },
+          slideChange: function () {
+            this.slides.forEach((slide, index) => {
+              slide.style.opacity = index === this.activeIndex ? "1" : "0.5";
+            });
+          },
+        },
+        breakpoints: {
+          768: {
+            navigation: {
+              nextEl: ".swiper-next",
+              prevEl: ".swiper-prev",
+            },
+          },
+        },
+      });
+    </script>
 
     <!-- hot course -->
     <div class="container-fluid position-relative">
@@ -155,198 +192,210 @@
               更多募資課程
             </button>
           </div>
-          <div class="col">
-            <div class="row gy-6">
-              <div class="col-lg-6">
-                <div class="card position-relative">
-                  <span
-                    class="badge rounded-pill py-2 px-4 text-primary bg-primary-10 card-badge position-absolute"
-                    >優惠倒數 10 天</span
-                  >
-                  <img
-                    src="../assets/images/course-4.png"
-                    class="card-img-top"
-                    alt="..."
-                  />
-                  <div class="card-body card-shadow">
-                    <h5 class="card-title">
-                      創意寫作工坊：從靈感到出版的全過程
-                    </h5>
-                    <div class="card-content d-flex align-items-center mb-lg-6">
-                      <img
-                        class="object-fit-cover me-2 rounded-circle"
-                        style="width: 44px"
-                        src="../assets/images/tutor-1.png"
-                        alt=""
-                      />
-                      <p class="card-text text-neutral-80">Kelly Hsu</p>
-                    </div>
-                    <div class="progross d-flex justify-content-between">
-                      <p class="fw-semibold text-primary">募資進度 81 %</p>
-                      <p class="fs-8">已有 521 位同學加入</p>
-                    </div>
-                    <div class="progress my-2">
+          <div class="col-lg-8">
+            <div class="swiper mySwiper1">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="card position-relative">
+                    <span
+                      class="badge rounded-pill py-2 px-4 text-primary bg-primary-10 card-badge position-absolute"
+                      >優惠倒數 10 天</span
+                    >
+                    <img
+                      src="../assets/images/course-4.png"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                    <div class="card-body card-shadow">
+                      <h5 class="card-title">
+                        創意寫作工坊：從靈感到出版的全過程
+                      </h5>
                       <div
-                        class="progress-bar"
-                        role="progressbar"
-                        style="width: 81%"
-                        aria-valuenow="81"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
-                    <div class="ntd">
-                      <p class="fs-6 fw-semibold">
-                        NT$ 2,480
-                        <del class="ms-2 fs-8 fw-normal del-word"
-                          >NT$ 3,200</del
-                        >
-                      </p>
+                        class="card-content d-flex align-items-center mb-lg-6"
+                      >
+                        <img
+                          class="object-fit-cover me-2 rounded-circle"
+                          style="width: 44px"
+                          src="../assets/images/tutor-1.png"
+                          alt=""
+                        />
+                        <p class="card-text text-neutral-80">Kelly Hsu</p>
+                      </div>
+                      <div class="progross d-flex justify-content-between">
+                        <p class="fw-semibold text-primary">募資進度 81 %</p>
+                        <p class="fs-8">已有 521 位同學加入</p>
+                      </div>
+                      <div class="progress my-2">
+                        <div
+                          class="progress-bar"
+                          role="progressbar"
+                          style="width: 81%"
+                          aria-valuenow="81"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        ></div>
+                      </div>
+                      <div class="ntd">
+                        <p class="fs-6 fw-semibold">
+                          NT$ 2,480
+                          <del class="ms-2 fs-8 fw-normal del-word"
+                            >NT$ 3,200</del
+                          >
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="card position-relative">
-                  <span
-                    class="badge rounded-pill py-2 px-4 text-primary bg-primary-10 card-badge position-absolute"
-                    >優惠倒數 17 天</span
-                  >
-                  <img
-                    src="../assets/images/course-1.png"
-                    class="card-img-top"
-                    alt="..."
-                  />
-                  <div class="card-body card-shadow">
-                    <h5 class="card-title">健康廚房：營養均衡的素食料理指南</h5>
-                    <div class="card-content d-flex align-items-center mb-lg-6">
-                      <img
-                        class="object-fit-cover me-2 rounded-circle"
-                        style="width: 44px"
-                        src="../assets/images/tutor-2.png"
-                        alt=""
-                      />
-                      <p class="card-text text-neutral-80">希姐帶你吃</p>
-                    </div>
-                    <div class="progross d-flex justify-content-between">
-                      <p class="fw-semibold text-primary">募資進度 281 %</p>
-                      <p class="fs-8">已有 1,397 位同學加入</p>
-                    </div>
-                    <div class="progress my-2">
+                <div class="swiper-slide">
+                  <div class="card position-relative">
+                    <span
+                      class="badge rounded-pill py-2 px-4 text-primary bg-primary-10 card-badge position-absolute"
+                      >優惠倒數 17 天</span
+                    >
+                    <img
+                      src="../assets/images/course-1.png"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                    <div class="card-body card-shadow">
+                      <h5 class="card-title">
+                        健康廚房：營養均衡的素食料理指南
+                      </h5>
                       <div
-                        class="progress-bar"
-                        role="progressbar"
-                        style="width: 281%"
-                        aria-valuenow="281"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
-                    <div class="ntd">
-                      <p class="fs-6 fw-semibold">
-                        NT$ 1,680
-                        <del class="ms-2 fs-8 fw-normal del-word"
-                          >NT$ 2,980</del
-                        >
-                      </p>
+                        class="card-content d-flex align-items-center mb-lg-6"
+                      >
+                        <img
+                          class="object-fit-cover me-2 rounded-circle"
+                          style="width: 44px"
+                          src="../assets/images/tutor-2.png"
+                          alt=""
+                        />
+                        <p class="card-text text-neutral-80">希姐帶你吃</p>
+                      </div>
+                      <div class="progross d-flex justify-content-between">
+                        <p class="fw-semibold text-primary">募資進度 281 %</p>
+                        <p class="fs-8">已有 1,397 位同學加入</p>
+                      </div>
+                      <div class="progress my-2">
+                        <div
+                          class="progress-bar"
+                          role="progressbar"
+                          style="width: 281%"
+                          aria-valuenow="281"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        ></div>
+                      </div>
+                      <div class="ntd">
+                        <p class="fs-6 fw-semibold">
+                          NT$ 1,680
+                          <del class="ms-2 fs-8 fw-normal del-word"
+                            >NT$ 2,980</del
+                          >
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="card position-relative">
-                  <span
-                    class="badge rounded-pill py-2 px-4 text-primary bg-primary-10 card-badge position-absolute"
-                    >優惠倒數 9 天</span
-                  >
-                  <img
-                    src="../assets/images/course-2.png"
-                    class="card-img-top"
-                    alt="..."
-                  />
-                  <div class="card-body card-shadow">
-                    <h5 class="card-title">
-                      音樂製作入門：從零開始創作你的音樂
-                    </h5>
-                    <div class="card-content d-flex align-items-center mb-lg-6">
-                      <img
-                        class="object-fit-cover me-2 rounded-circle"
-                        style="width: 44px"
-                        src="../assets/images/tutor-3.png"
-                        alt=""
-                      />
-                      <p class="card-text text-neutral-80">K.Dee</p>
-                    </div>
-                    <div class="progross d-flex justify-content-between">
-                      <p class="fw-semibold text-primary">募資進度 76 %</p>
-                      <p class="fs-8">已有 420 位同學加入</p>
-                    </div>
-                    <div class="progress my-2">
+                <div class="swiper-slide">
+                  <div class="card position-relative">
+                    <span
+                      class="badge rounded-pill py-2 px-4 text-primary bg-primary-10 card-badge position-absolute"
+                      >優惠倒數 9 天</span
+                    >
+                    <img
+                      src="../assets/images/course-2.png"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                    <div class="card-body card-shadow">
+                      <h5 class="card-title">
+                        音樂製作入門：從零開始創作你的音樂
+                      </h5>
                       <div
-                        class="progress-bar"
-                        role="progressbar"
-                        style="width: 76%"
-                        aria-valuenow="76"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
-                    <div class="ntd">
-                      <p class="fs-6 fw-semibold">
-                        NT$ 2,680
-                        <del class="ms-2 fs-8 fw-normal del-word"
-                          >NT$ 3,200</del
-                        >
-                      </p>
+                        class="card-content d-flex align-items-center mb-lg-6"
+                      >
+                        <img
+                          class="object-fit-cover me-2 rounded-circle"
+                          style="width: 44px"
+                          src="../assets/images/tutor-3.png"
+                          alt=""
+                        />
+                        <p class="card-text text-neutral-80">K.Dee</p>
+                      </div>
+                      <div class="progross d-flex justify-content-between">
+                        <p class="fw-semibold text-primary">募資進度 76 %</p>
+                        <p class="fs-8">已有 420 位同學加入</p>
+                      </div>
+                      <div class="progress my-2">
+                        <div
+                          class="progress-bar"
+                          role="progressbar"
+                          style="width: 76%"
+                          aria-valuenow="76"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        ></div>
+                      </div>
+                      <div class="ntd">
+                        <p class="fs-6 fw-semibold">
+                          NT$ 2,680
+                          <del class="ms-2 fs-8 fw-normal del-word"
+                            >NT$ 3,200</del
+                          >
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="card position-relative">
-                  <span
-                    class="badge rounded-pill py-2 px-4 text-primary bg-primary-10 card-badge position-absolute"
-                    >優惠倒數 1 天</span
-                  >
-                  <img
-                    src="../assets/images/course-3.png"
-                    class="card-img-top"
-                    alt="..."
-                  />
-                  <div class="card-body card-shadow">
-                    <h5 class="card-title">
-                      掌握商業攝影：打造你的專業攝影事業
-                    </h5>
-                    <div class="card-content d-flex align-items-center mb-lg-6">
-                      <img
-                        class="object-fit-cover me-2 rounded-circle"
-                        style="width: 44px"
-                        src="../assets/images/tutor-4.png"
-                        alt=""
-                      />
-                      <p class="card-text text-neutral-80">Mikeeee</p>
-                    </div>
-                    <div class="progross d-flex justify-content-between">
-                      <p class="fw-semibold text-primary">募資進度 98 %</p>
-                      <p class="fs-8">已有 290 位同學加入</p>
-                    </div>
-                    <div class="progress my-2">
+                <div class="swiper-slide">
+                  <div class="card position-relative">
+                    <span
+                      class="badge rounded-pill py-2 px-4 text-primary bg-primary-10 card-badge position-absolute"
+                      >優惠倒數 1 天</span
+                    >
+                    <img
+                      src="../assets/images/course-3.png"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                    <div class="card-body card-shadow">
+                      <h5 class="card-title">
+                        掌握商業攝影：打造你的專業攝影事業
+                      </h5>
                       <div
-                        class="progress-bar"
-                        role="progressbar"
-                        style="width: 98%"
-                        aria-valuenow="98"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
-                    <div class="ntd">
-                      <p class="fs-6 fw-semibold">
-                        NT$ 1,980
-                        <del class="ms-2 fs-8 fw-normal del-word"
-                          >NT$ 3,200</del
-                        >
-                      </p>
+                        class="card-content d-flex align-items-center mb-lg-6"
+                      >
+                        <img
+                          class="object-fit-cover me-2 rounded-circle"
+                          style="width: 44px"
+                          src="../assets/images/tutor-4.png"
+                          alt=""
+                        />
+                        <p class="card-text text-neutral-80">Mikeeee</p>
+                      </div>
+                      <div class="progross d-flex justify-content-between">
+                        <p class="fw-semibold text-primary">募資進度 98 %</p>
+                        <p class="fs-8">已有 290 位同學加入</p>
+                      </div>
+                      <div class="progress my-2">
+                        <div
+                          class="progress-bar"
+                          role="progressbar"
+                          style="width: 98%"
+                          aria-valuenow="98"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        ></div>
+                      </div>
+                      <div class="ntd">
+                        <p class="fs-6 fw-semibold">
+                          NT$ 1,980
+                          <del class="ms-2 fs-8 fw-normal del-word"
+                            >NT$ 3,200</del
+                          >
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -356,6 +405,41 @@
         </div>
       </div>
     </div>
+
+    <script>
+      var swiper = new Swiper(".mySwiper1", {
+        initialSlide: 1,
+        effect: "slide",
+        fadeEffect: {
+          crossFade: true,
+        },
+        mousewheel: true,
+        keyboard: true,
+        breakpoints: {
+          320: {
+            spaceBetween: 24,
+            slidesPerView: 1,
+            grid: {
+              rows: 1,
+              fill: "row",
+            },
+            allowTouchMove: true,
+            loop: true,
+          },
+          768: {
+            spaceBetween: 24,
+            slidesPerView: 2,
+            grid: {
+              rows: 2,
+              fill: "row",
+            },
+            allowTouchMove: false,
+            loop: false,
+          },
+        },
+      });
+    </script>
+
     <!-- everybody bought -->
     <div class="container-fluid position-relative bought-bg">
       <img
@@ -364,22 +448,6 @@
         class="position-absolute bought-img"
       />
       <div class="container py-20 py-lg-22 position-relative">
-        <a>
-          <img
-            style="z-index: 10"
-            class="position-absolute top-50 start-0 translate-y-middle"
-            src="../assets/images/icons/btn_l.png"
-            alt=""
-          />
-        </a>
-        <a href="">
-          <img
-            style="z-index: 10"
-            class="position-absolute top-50 end-0 translate-y-middle"
-            src="../assets/images/icons/btn_r.png"
-            alt=""
-          />
-        </a>
         <div
           class="bought-title d-flex flex-column align-items-start align-items-lg-center mb-10"
         >
@@ -394,236 +462,350 @@
           </div>
           <p class="fs-6 fw-medium text-neutral-80">熱銷課程一次看！✨</p>
         </div>
-        <div class="row gy-6">
-          <div class="col-lg-3">
-            <div class="card position-relative">
-              <span
-                class="badge rounded-pill py-2 px-4 text-danger bg-danger-10 card-badge position-absolute"
-                >限時 8 折 🔥</span
-              >
-              <img
-                src="../assets/images/course-4.png"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body card-shadow">
-                <h5 class="card-title">創意寫作工坊：從靈感到出版的全過程</h5>
-                <div
-                  class="card-content d-flex justify-content-between align-items-center mb-lg-6"
+
+        <div class="swiper mySwiper2">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="card position-relative">
+                <span
+                  class="badge rounded-pill py-2 px-4 text-danger bg-danger-10 card-badge position-absolute"
+                  >限時 8 折 🔥</span
                 >
-                  <div class="tutor d-flex align-items-center">
-                    <img
-                      class="object-fit-cover me-2 rounded-circle"
-                      style="width: 44px"
-                      src="../assets/images/tutor-1.png"
-                      alt=""
-                    />
-                    <p class="card-text text-neutral-80">Kelly Hsu</p>
+                <img
+                  src="../assets/images/course-4.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body card-shadow">
+                  <h5 class="card-title">創意寫作工坊：從靈感到出版的全過程</h5>
+                  <div
+                    class="card-content d-flex justify-content-between align-items-center mb-lg-6"
+                  >
+                    <div class="tutor d-flex align-items-center">
+                      <img
+                        class="object-fit-cover me-2 rounded-circle"
+                        style="width: 44px"
+                        src="../assets/images/tutor-1.png"
+                        alt=""
+                      />
+                      <p class="card-text text-neutral-80">Kelly Hsu</p>
+                    </div>
+                    <div class="ntd d-flex flex-column align-items-end">
+                      <p class="fs-6 fw-semibold text-primary">NT$ 2,480</p>
+                      <del class="ms-2 fs-8 fw-normal del-word">NT$ 3,200</del>
+                    </div>
                   </div>
-                  <div class="ntd d-flex flex-column align-items-end">
-                    <p class="fs-6 fw-semibold text-primary">NT$ 2,480</p>
-                    <del class="ms-2 fs-8 fw-normal del-word">NT$ 3,200</del>
+                  <hr />
+                  <div class="d-flex justify-content-between">
+                    <!-- tag-join -->
+                    <div class="d-flex flex-column align-items-start">
+                      <span
+                        class="badge rounded-pill py-1 px-4 fs-8 fw-normal text-neutral-80 bg-neutral-40"
+                        >中文創作</span
+                      >
+                      <p class="fs-8 mt-1 text-neutral-80">
+                        已有 420 位同學加入
+                      </p>
+                    </div>
+                    <!-- evaluate -->
+                    <div class="d-flex align-items-center">
+                      <img
+                        class="me-1"
+                        src="../assets/images/icons/star.png"
+                        alt=""
+                      />
+                      <div class="d-flex fs-8">
+                        <p class="me-1">4.0</p>
+                        <p class="del-word">(333)</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <hr />
-                <div class="d-flex justify-content-between">
-                  <!-- tag-join -->
-                  <div class="d-flex flex-column align-items-start">
-                    <span
-                      class="badge rounded-pill py-1 px-4 fs-8 fw-normal text-neutral-80 bg-neutral-40"
-                      >中文創作</span
-                    >
-                    <p class="fs-8 mt-1 text-neutral-80">已有 420 位同學加入</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card position-relative">
+                <span
+                  class="badge rounded-pill py-2 px-4 text-danger bg-danger-10 card-badge position-absolute"
+                  >限時 8 折 🔥</span
+                >
+                <img
+                  src="../assets/images/course-5.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body card-shadow">
+                  <h5 class="card-title">
+                    小白也會！從零開始學習 Python 程式設計
+                  </h5>
+                  <div
+                    class="card-content d-flex justify-content-between align-items-center mb-lg-6"
+                  >
+                    <div class="tutor d-flex align-items-center">
+                      <img
+                        class="object-fit-cover me-2 rounded-circle"
+                        style="width: 44px"
+                        src="../assets/images/tutor-1.png"
+                        alt=""
+                      />
+                      <p class="card-text text-neutral-80">Kelly Hsu</p>
+                    </div>
+                    <div class="ntd d-flex flex-column align-items-end">
+                      <p class="fs-6 fw-semibold text-primary">NT$ 2,480</p>
+                      <del class="ms-2 fs-8 fw-normal del-word">NT$ 3,200</del>
+                    </div>
                   </div>
-                  <!-- evaluate -->
-                  <div class="d-flex align-items-center">
-                    <img
-                      class="me-1"
-                      src="../assets/images/icons/star.png"
-                      alt=""
-                    />
-                    <div class="d-flex fs-8">
-                      <p class="me-1">4.0</p>
-                      <p class="del-word">(333)</p>
+                  <hr />
+                  <div class="d-flex justify-content-between">
+                    <!-- tag-join -->
+                    <div class="d-flex flex-column align-items-start">
+                      <span
+                        class="badge rounded-pill py-1 px-4 fs-8 fw-normal text-neutral-80 bg-neutral-40"
+                        >程式開發</span
+                      >
+                      <p class="fs-8 mt-1 text-neutral-80">
+                        已有 420 位同學加入
+                      </p>
+                    </div>
+                    <!-- evaluate -->
+                    <div class="d-flex align-items-center">
+                      <img
+                        class="me-1"
+                        src="../assets/images/icons/star.png"
+                        alt=""
+                      />
+                      <div class="d-flex fs-8">
+                        <p class="me-1">4.0</p>
+                        <p class="del-word">(333)</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card position-relative">
+                <span
+                  class="badge rounded-pill py-2 px-4 text-danger bg-danger-10 card-badge position-absolute"
+                  >限時 8 折 🔥</span
+                >
+                <img
+                  src="../assets/images/course-6.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body card-shadow">
+                  <h5 class="card-title">全面掌握 JavaScript 開發技術</h5>
+                  <div
+                    class="card-content d-flex justify-content-between align-items-center mb-lg-6"
+                  >
+                    <div class="tutor d-flex align-items-center">
+                      <img
+                        class="object-fit-cover me-2 rounded-circle"
+                        style="width: 44px"
+                        src="../assets/images/tutor-1.png"
+                        alt=""
+                      />
+                      <p class="card-text text-neutral-80">Kelly Hsu</p>
+                    </div>
+                    <div class="ntd d-flex flex-column align-items-end">
+                      <p class="fs-6 fw-semibold text-primary">NT$ 2,480</p>
+                      <del class="ms-2 fs-8 fw-normal del-word">NT$ 3,200</del>
+                    </div>
+                  </div>
+                  <hr />
+                  <div class="d-flex justify-content-between">
+                    <!-- tag-join -->
+                    <div class="d-flex flex-column align-items-start">
+                      <span
+                        class="badge rounded-pill py-1 px-4 fs-8 fw-normal text-neutral-80 bg-neutral-40"
+                        >程式開發</span
+                      >
+                      <p class="fs-8 mt-1 text-neutral-80">
+                        已有 420 位同學加入
+                      </p>
+                    </div>
+                    <!-- evaluate -->
+                    <div class="d-flex align-items-center">
+                      <img
+                        class="me-1"
+                        src="../assets/images/icons/star.png"
+                        alt=""
+                      />
+                      <div class="d-flex fs-8">
+                        <p class="me-1">4.0</p>
+                        <p class="del-word">(333)</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card position-relative">
+                <span
+                  class="badge rounded-pill py-2 px-4 text-danger bg-danger-10 card-badge position-absolute"
+                  >限時 8 折 🔥</span
+                >
+                <img
+                  src="../assets/images/course-7.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body card-shadow">
+                  <h5 class="card-title">HTML & CSS 網頁設計基礎教程</h5>
+                  <div
+                    class="card-content d-flex justify-content-between align-items-center mb-lg-6"
+                  >
+                    <div class="tutor d-flex align-items-center">
+                      <img
+                        class="object-fit-cover me-2 rounded-circle"
+                        style="width: 44px"
+                        src="../assets/images/tutor-1.png"
+                        alt=""
+                      />
+                      <p class="card-text text-neutral-80">Kelly Hsu</p>
+                    </div>
+                    <div class="ntd d-flex flex-column align-items-end">
+                      <p class="fs-6 fw-semibold text-primary">NT$ 2,480</p>
+                      <del class="ms-2 fs-8 fw-normal del-word">NT$ 3,200</del>
+                    </div>
+                  </div>
+                  <hr />
+                  <div class="d-flex justify-content-between">
+                    <!-- tag-join -->
+                    <div class="d-flex flex-column align-items-start">
+                      <span
+                        class="badge rounded-pill py-1 px-4 fs-8 fw-normal text-neutral-80 bg-neutral-40"
+                        >程式開發</span
+                      >
+                      <p class="fs-8 mt-1 text-neutral-80">
+                        已有 420 位同學加入
+                      </p>
+                    </div>
+                    <!-- evaluate -->
+                    <div class="d-flex align-items-center">
+                      <img
+                        class="me-1"
+                        src="../assets/images/icons/star.png"
+                        alt=""
+                      />
+                      <div class="d-flex fs-8">
+                        <p class="me-1">4.0</p>
+                        <p class="del-word">(333)</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card position-relative">
+                <span
+                  class="badge rounded-pill py-2 px-4 text-danger bg-danger-10 card-badge position-absolute"
+                  >限時 8 折 🔥</span
+                >
+                <img
+                  src="../assets/images/course-8.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body card-shadow">
+                  <h5 class="card-title">
+                    更進一步！深入學習 Node.js 與後端開發
+                  </h5>
+                  <div
+                    class="card-content d-flex justify-content-between align-items-center mb-lg-6"
+                  >
+                    <div class="tutor d-flex align-items-center">
+                      <img
+                        class="object-fit-cover me-2 rounded-circle"
+                        style="width: 44px"
+                        src="../assets/images/tutor-1.png"
+                        alt=""
+                      />
+                      <p class="card-text text-neutral-80">Kelly Hsu</p>
+                    </div>
+                    <div class="ntd d-flex flex-column align-items-end">
+                      <p class="fs-6 fw-semibold text-primary">NT$ 2,480</p>
+                      <del class="ms-2 fs-8 fw-normal del-word">NT$ 3,200</del>
+                    </div>
+                  </div>
+                  <hr />
+                  <div class="d-flex justify-content-between">
+                    <!-- tag-join -->
+                    <div class="d-flex flex-column align-items-start">
+                      <span
+                        class="badge rounded-pill py-1 px-4 fs-8 fw-normal text-neutral-80 bg-neutral-40"
+                        >程式開發</span
+                      >
+                      <p class="fs-8 mt-1 text-neutral-80">
+                        已有 420 位同學加入
+                      </p>
+                    </div>
+                    <!-- evaluate -->
+                    <div class="d-flex align-items-center">
+                      <img
+                        class="me-1"
+                        src="../assets/images/icons/star.png"
+                        alt=""
+                      />
+                      <div class="d-flex fs-8">
+                        <p class="me-1">4.0</p>
+                        <p class="del-word">(333)</p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-3">
-            <div class="card position-relative">
-              <span
-                class="badge rounded-pill py-2 px-4 text-danger bg-danger-10 card-badge position-absolute"
-                >限時 8 折 🔥</span
-              >
-              <img
-                src="../assets/images/course-5.png"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body card-shadow">
-                <h5 class="card-title">
-                  小白也會！從零開始學習 Python 程式設計
-                </h5>
-                <div
-                  class="card-content d-flex justify-content-between align-items-center mb-lg-6"
-                >
-                  <div class="tutor d-flex align-items-center">
-                    <img
-                      class="object-fit-cover me-2 rounded-circle"
-                      style="width: 44px"
-                      src="../assets/images/tutor-1.png"
-                      alt=""
-                    />
-                    <p class="card-text text-neutral-80">Kelly Hsu</p>
-                  </div>
-                  <div class="ntd d-flex flex-column align-items-end">
-                    <p class="fs-6 fw-semibold text-primary">NT$ 2,480</p>
-                    <del class="ms-2 fs-8 fw-normal del-word">NT$ 3,200</del>
-                  </div>
-                </div>
-                <hr />
-                <div class="d-flex justify-content-between">
-                  <!-- tag-join -->
-                  <div class="d-flex flex-column align-items-start">
-                    <span
-                      class="badge rounded-pill py-1 px-4 fs-8 fw-normal text-neutral-80 bg-neutral-40"
-                      >程式開發</span
-                    >
-                    <p class="fs-8 mt-1 text-neutral-80">已有 420 位同學加入</p>
-                  </div>
-                  <!-- evaluate -->
-                  <div class="d-flex align-items-center">
-                    <img
-                      class="me-1"
-                      src="../assets/images/icons/star.png"
-                      alt=""
-                    />
-                    <div class="d-flex fs-8">
-                      <p class="me-1">4.0</p>
-                      <p class="del-word">(333)</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+          <div class="swiper-button-next swiper2-next">
+            <div
+              class="d-flex align-items-center justify-content-center p-4 bg-white rounded"
+            >
+              <span class="fs-7 material-symbols-outlined">
+                arrow_forward
+              </span>
             </div>
           </div>
-          <div class="col-lg-3">
-            <div class="card position-relative">
-              <span
-                class="badge rounded-pill py-2 px-4 text-danger bg-danger-10 card-badge position-absolute"
-                >限時 8 折 🔥</span
-              >
-              <img
-                src="../assets/images/course-6.png"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body card-shadow">
-                <h5 class="card-title">全面掌握 JavaScript 開發技術</h5>
-                <div
-                  class="card-content d-flex justify-content-between align-items-center mb-lg-6"
-                >
-                  <div class="tutor d-flex align-items-center">
-                    <img
-                      class="object-fit-cover me-2 rounded-circle"
-                      style="width: 44px"
-                      src="../assets/images/tutor-1.png"
-                      alt=""
-                    />
-                    <p class="card-text text-neutral-80">Kelly Hsu</p>
-                  </div>
-                  <div class="ntd d-flex flex-column align-items-end">
-                    <p class="fs-6 fw-semibold text-primary">NT$ 2,480</p>
-                    <del class="ms-2 fs-8 fw-normal del-word">NT$ 3,200</del>
-                  </div>
-                </div>
-                <hr />
-                <div class="d-flex justify-content-between">
-                  <!-- tag-join -->
-                  <div class="d-flex flex-column align-items-start">
-                    <span
-                      class="badge rounded-pill py-1 px-4 fs-8 fw-normal text-neutral-80 bg-neutral-40"
-                      >程式開發</span
-                    >
-                    <p class="fs-8 mt-1 text-neutral-80">已有 420 位同學加入</p>
-                  </div>
-                  <!-- evaluate -->
-                  <div class="d-flex align-items-center">
-                    <img
-                      class="me-1"
-                      src="../assets/images/icons/star.png"
-                      alt=""
-                    />
-                    <div class="d-flex fs-8">
-                      <p class="me-1">4.0</p>
-                      <p class="del-word">(333)</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3">
-            <div class="card position-relative">
-              <span
-                class="badge rounded-pill py-2 px-4 text-danger bg-danger-10 card-badge position-absolute"
-                >限時 8 折 🔥</span
-              >
-              <img
-                src="../assets/images/course-7.png"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body card-shadow">
-                <h5 class="card-title">HTML & CSS 網頁設計基礎教程</h5>
-                <div
-                  class="card-content d-flex justify-content-between align-items-center mb-lg-6"
-                >
-                  <div class="tutor d-flex align-items-center">
-                    <img
-                      class="object-fit-cover me-2 rounded-circle"
-                      style="width: 44px"
-                      src="../assets/images/tutor-1.png"
-                      alt=""
-                    />
-                    <p class="card-text text-neutral-80">Kelly Hsu</p>
-                  </div>
-                  <div class="ntd d-flex flex-column align-items-end">
-                    <p class="fs-6 fw-semibold text-primary">NT$ 2,480</p>
-                    <del class="ms-2 fs-8 fw-normal del-word">NT$ 3,200</del>
-                  </div>
-                </div>
-                <hr />
-                <div class="d-flex justify-content-between">
-                  <!-- tag-join -->
-                  <div class="d-flex flex-column align-items-start">
-                    <span
-                      class="badge rounded-pill py-1 px-4 fs-8 fw-normal text-neutral-80 bg-neutral-40"
-                      >程式開發</span
-                    >
-                    <p class="fs-8 mt-1 text-neutral-80">已有 420 位同學加入</p>
-                  </div>
-                  <!-- evaluate -->
-                  <div class="d-flex align-items-center">
-                    <img
-                      class="me-1"
-                      src="../assets/images/icons/star.png"
-                      alt=""
-                    />
-                    <div class="d-flex fs-8">
-                      <p class="me-1">4.0</p>
-                      <p class="del-word">(333)</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+          <div class="swiper-button-prev swiper2-prev">
+            <div
+              class="d-flex align-items-center justify-content-center p-4 bg-white rounded"
+            >
+              <span class="fs-7 material-symbols-outlined"> arrow_back </span>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <script>
+      var swiper = new Swiper(".mySwiper2", {
+        spaceBetween: 40,
+        initialSlide: 1,
+        effect: "slide",
+        fadeEffect: {
+          crossFade: true,
+        },
+        mousewheel: true,
+        keyboard: true,
+        loop: true,
+        navigation: {
+          nextEl: ".swiper2-next",
+          prevEl: ".swiper2-prev",
+        },
+        breakpoints: {
+          375: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 4,
+          },
+        },
+      });
+    </script>
+
     <div class="container-fluid teacher-bg">
       <div class="container"></div>
     </div>
@@ -631,41 +813,5 @@
     <%- include('./layout/footer'); -%>
 
     <script type="module" src="../main.js"></script>
-
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <!-- Initialize Swiper -->
-    <script>
-      var swiper = new Swiper(".mySwiper", {
-        cssMode: true,
-        slidesPerView: "auto",
-        centeredSlides: true,
-        spaceBetween: 40,
-        initialSlide: 1,
-        effect: "slide",
-        fadeEffect: {
-          crossFade: true,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        mousewheel: true,
-        keyboard: true,
-        on: {
-          init: function () {
-            this.slides.forEach((slide, index) => {
-              slide.style.opacity = index === this.activeIndex ? "1" : "0.5";
-            });
-          },
-          slideChange: function () {
-            this.slides.forEach((slide, index) => {
-              slide.style.opacity = index === this.activeIndex ? "1" : "0.5";
-            });
-          },
-        },
-      });
-    </script>
   </body>
 </html>
