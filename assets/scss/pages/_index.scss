@@ -7,12 +7,6 @@
 }
 
 .banner-left-bottom-Text {
-
-  bottom: 0px;
-  left: 0px;
-  border-bottom-left-radius: 80px;
-  border-top-right-radius: 80px;
-.banner-left-bottom-Text{
   width: 100%;
 }
 
@@ -39,12 +33,13 @@
 }
 
 @media (min-width: 1600px) {
-  
-  .banner-left-bottom-Text{
+
+  .banner-left-bottom-Text {
     border-bottom-left-radius: 80px;
     border-top-right-radius: 80px;
     width: auto;
   }
+
   .banner-img-radius {
     border-radius: 80px;
   }
@@ -52,9 +47,9 @@
   .swiper-button-next {
     right: calc((100% - 1600px) / 2 - 20px);
   }
-  
+
   .swiper-button-prev {
-    left: calc((100% - 1600px) / 2 - 20px); 
+    left: calc((100% - 1600px) / 2 - 20px);
   }
 }
 
