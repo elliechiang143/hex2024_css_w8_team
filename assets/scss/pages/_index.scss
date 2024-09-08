@@ -112,7 +112,15 @@
   margin: 0 auto;
   max-width: 1656px;
   border-radius: 80px;
-  padding: 5rem 11.25rem;
+  padding: 5rem 1rem;
+
+  @include media-breakpoint-up(sm) {
+    padding: 5rem 2rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: 5rem 11.25rem;
+  }
 
   .learn-icon {
     border-radius: 1rem;
