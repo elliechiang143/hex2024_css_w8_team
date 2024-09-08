@@ -38,7 +38,7 @@
   z-index: -2;
 }
 
-.bought-title-img {
+.background-title-img {
   top: -24px;
   left: -24px;
   z-index: -1;
@@ -56,5 +56,11 @@
 
 .teacher-bg {
   background-image: url(/assets/images/deco/line-1.png);
-  background-repeat: cover;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.teacher-card {
+  margin-top: -6.25rem;
+  z-index: 5;
 }
