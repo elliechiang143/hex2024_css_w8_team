@@ -6,6 +6,41 @@
   opacity: 70%;
 }
 
+.banner-left-bottom-Text{
+  
+  bottom: 0px;
+  left: 0px;
+  border-bottom-left-radius: 80px;
+  border-top-right-radius: 80px;
+}
+
+
+.swiper-slide {
+  width: 1600px;
+}
+.swiper-button-next {
+  position: absolute;
+  right: calc((100% - 1600px) / 2 - 20px);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10; 
+}
+
+
+.swiper-button-prev {
+  position: absolute;
+  left: calc((100% - 1600px) / 2 - 20px); 
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.swiper-button-next::after,
+  .swiper-button-prev::after {
+    display: none; /* 隱藏箭頭圖標，方便自定義圖標 */
+  }
+
+
 .card-shadow {
   border-radius: 20px;
   box-shadow: 0px 25px 50px -12px #0000001F;
